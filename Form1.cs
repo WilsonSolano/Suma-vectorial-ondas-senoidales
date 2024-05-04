@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace Calculadoradevectore
 {
     public partial class Form1 : MaterialSkin.Controls.MaterialForm
@@ -9,13 +11,11 @@ namespace Calculadoradevectore
         public Form1()
         {
             InitializeComponent();
-
-
         }
 
         private void btnAna1_Click(object sender, EventArgs e)
         {
-            if(!existe)
+            if (!existe)
             {
                 g = plano.CreateGraphics();
                 p = new Pen(Color.Blue, 4);
@@ -26,7 +26,16 @@ namespace Calculadoradevectore
                 existe = true;
             }
 
+            vectorClass vector = new vectorClass();
 
+            vector.SGmagnitud = Convert.ToInt32(unidad.Text);
+            vector.SGangulo = Convert.ToDouble(angulo.Text);
+
+            vector.transformaAngulo();
+            vector.calcularCoordenadas();
+            vector.DibujarVector(plano);
+
+            prueba.BackColor = Color.White;
         }
 
         private void Form1_Load(object sender, EventArgs e)
