@@ -1,4 +1,6 @@
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Calculadoradevectore
 {
@@ -11,6 +13,11 @@ namespace Calculadoradevectore
         public Form1()
         {
             InitializeComponent();
+
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Cyan400, Primary.Cyan200, Primary.Cyan50, Accent.Lime400, TextShade.BLACK);
         }
 
         private void btnAna1_Click(object sender, EventArgs e)
@@ -34,8 +41,6 @@ namespace Calculadoradevectore
             vector.transformaAngulo();
             vector.calcularCoordenadas();
             vector.DibujarVector(plano);
-
-            prueba.BackColor = Color.White;
         }
 
         private void Form1_Load(object sender, EventArgs e)

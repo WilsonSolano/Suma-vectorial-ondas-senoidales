@@ -30,8 +30,6 @@
         {
             plano = new PictureBox();
             panel1 = new Panel();
-            prueba = new MaterialSkin.Controls.MaterialButton();
-            materialButton1 = new MaterialSkin.Controls.MaterialButton();
             groupBox1 = new GroupBox();
             angulo = new MaterialSkin.Controls.MaterialTextBox();
             label3 = new Label();
@@ -40,6 +38,8 @@
             btnAna1 = new MaterialSkin.Controls.MaterialButton();
             unidad = new MaterialSkin.Controls.MaterialTextBox();
             materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            prueba = new MaterialSkin.Controls.MaterialButton();
+            materialButton1 = new MaterialSkin.Controls.MaterialButton();
             label4 = new Label();
             label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)plano).BeginInit();
@@ -49,6 +49,7 @@
             // 
             // plano
             // 
+            plano.BorderStyle = BorderStyle.FixedSingle;
             plano.Location = new Point(780, 113);
             plano.Name = "plano";
             plano.Size = new Size(500, 500);
@@ -57,52 +58,12 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(prueba);
-            panel1.Controls.Add(materialButton1);
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(groupBox1);
             panel1.Location = new Point(53, 98);
             panel1.Name = "panel1";
-            panel1.Size = new Size(503, 546);
+            panel1.Size = new Size(503, 488);
             panel1.TabIndex = 1;
-            // 
-            // prueba
-            // 
-            prueba.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            prueba.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
-            prueba.Depth = 0;
-            prueba.HighEmphasis = true;
-            prueba.Icon = null;
-            prueba.Location = new Point(278, 15);
-            prueba.Margin = new Padding(4, 6, 4, 6);
-            prueba.MouseState = MaterialSkin.MouseState.HOVER;
-            prueba.Name = "prueba";
-            prueba.NoAccentTextColor = Color.Empty;
-            prueba.Size = new Size(158, 36);
-            prueba.TabIndex = 2;
-            prueba.Text = "materialButton2";
-            prueba.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            prueba.UseAccentColor = true;
-            prueba.UseVisualStyleBackColor = true;
-            // 
-            // materialButton1
-            // 
-            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            materialButton1.BackColor = SystemColors.ActiveBorder;
-            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            materialButton1.Depth = 0;
-            materialButton1.HighEmphasis = true;
-            materialButton1.Icon = null;
-            materialButton1.Location = new Point(73, 15);
-            materialButton1.Margin = new Padding(4, 6, 4, 6);
-            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialButton1.Name = "materialButton1";
-            materialButton1.NoAccentTextColor = Color.Empty;
-            materialButton1.Size = new Size(129, 36);
-            materialButton1.TabIndex = 1;
-            materialButton1.Text = "Nuevo Vector";
-            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            materialButton1.UseAccentColor = false;
-            materialButton1.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -115,7 +76,7 @@
             groupBox1.Controls.Add(unidad);
             groupBox1.Controls.Add(materialTextBox1);
             groupBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(32, 77);
+            groupBox1.Location = new Point(32, 15);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(432, 298);
             groupBox1.TabIndex = 0;
@@ -220,11 +181,50 @@
             materialTextBox1.Text = "";
             materialTextBox1.TrailingIcon = null;
             // 
+            // prueba
+            // 
+            prueba.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            prueba.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
+            prueba.Depth = 0;
+            prueba.HighEmphasis = true;
+            prueba.Icon = null;
+            prueba.Location = new Point(339, 606);
+            prueba.Margin = new Padding(4, 6, 4, 6);
+            prueba.MouseState = MaterialSkin.MouseState.HOVER;
+            prueba.Name = "prueba";
+            prueba.NoAccentTextColor = Color.Empty;
+            prueba.Size = new Size(71, 36);
+            prueba.TabIndex = 2;
+            prueba.Text = "Sumar";
+            prueba.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            prueba.UseAccentColor = true;
+            prueba.UseVisualStyleBackColor = true;
+            // 
+            // materialButton1
+            // 
+            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton1.BackColor = SystemColors.ActiveBorder;
+            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton1.Depth = 0;
+            materialButton1.HighEmphasis = true;
+            materialButton1.Icon = null;
+            materialButton1.Location = new Point(171, 606);
+            materialButton1.Margin = new Padding(4, 6, 4, 6);
+            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton1.Name = "materialButton1";
+            materialButton1.NoAccentTextColor = Color.Empty;
+            materialButton1.Size = new Size(129, 36);
+            materialButton1.TabIndex = 1;
+            materialButton1.Text = "Nuevo Vector";
+            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton1.UseAccentColor = false;
+            materialButton1.UseVisualStyleBackColor = false;
+            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(1019, 85);
+            label4.Location = new Point(1022, 85);
             label4.Name = "label4";
             label4.Size = new Size(23, 25);
             label4.TabIndex = 2;
@@ -234,7 +234,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(1283, 348);
+            label5.Location = new Point(1283, 355);
             label5.Name = "label5";
             label5.Size = new Size(23, 25);
             label5.TabIndex = 2;
@@ -246,6 +246,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(1329, 680);
+            Controls.Add(materialButton1);
+            Controls.Add(prueba);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(panel1);
@@ -256,7 +258,6 @@
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)plano).EndInit();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
