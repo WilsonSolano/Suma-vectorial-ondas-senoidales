@@ -62,7 +62,7 @@
             panel1.Controls.Add(groupBox1);
             panel1.Location = new Point(53, 98);
             panel1.Name = "panel1";
-            panel1.Size = new Size(503, 488);
+            panel1.Size = new Size(503, 315);
             panel1.TabIndex = 1;
             // 
             // groupBox1
@@ -76,7 +76,7 @@
             groupBox1.Controls.Add(unidad);
             groupBox1.Controls.Add(materialTextBox1);
             groupBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(32, 15);
+            groupBox1.Location = new Point(32, 14);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(432, 298);
             groupBox1.TabIndex = 0;
@@ -219,6 +219,7 @@
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton1.UseAccentColor = false;
             materialButton1.UseVisualStyleBackColor = false;
+            materialButton1.Click += materialButton1_Click;
             // 
             // label4
             // 
@@ -255,7 +256,6 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)plano).EndInit();
             panel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);

@@ -9,6 +9,8 @@ namespace Calculadoradevectore
         Graphics g, h;
         Pen p, q;
         bool existe = false;
+        int numeroVector = 2;
+        List<vectorClass> Vectores = new List<vectorClass>();
 
         public Form1()
         {
@@ -41,11 +43,26 @@ namespace Calculadoradevectore
             vector.transformaAngulo();
             vector.calcularCoordenadas();
             vector.DibujarVector(plano);
+
+            Vectores.Add(vector);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void materialButton1_Click(object sender, EventArgs e)
         {
-
+            GenerarCardNew(numeroVector, panel1);
+            numeroVector++;
         }
+
+        //metodos
+        private void GenerarCardNew(int NumVector, Panel panel)
+        {
+            GroupBox vector = new GroupBox();
+            vector.Name = "vector" + NumVector;
+            vector.Text = "Vector " + NumVector;
+
+            panel.Controls.Add(vector);
+        }
+
+
     }
 }
