@@ -10,29 +10,37 @@ namespace Calculadoradevectore
 {
     internal class vectorClass
     {
-        double angulo, x, y;
-        int magnitud, X, Y;
-        Graphics g;
-        Pen p;
-
+        private double angulo, anguloRadiano;
+        private int magnitud, X, Y;
+        private int comY, comX;
+        protected Graphics g;
+        protected Pen p;
 
         public int SGmagnitud { get => magnitud; set => magnitud = value; }
         public double SGangulo { get => angulo; set => angulo = value; }
-
+        public int GComY { get => comY;}
+        public int GComX { get => comX;}
 
         public void transformaAngulo()
         {
-            angulo = (angulo * -1);
-            angulo = (angulo * Math.PI) / 180;
+            anguloRadiano = angulo;
+            anguloRadiano = (anguloRadiano * -1);
+            anguloRadiano = (anguloRadiano * Math.PI) / 180;
         }
 
-        public void calcularCoordenadas()
+        public void CalcularComponente()
         {
-            X = Convert.ToInt32(magnitud * Math.Cos(angulo));
-            Y = Convert.ToInt32(magnitud * Math.Sin(angulo));
+            comX = Convert.ToInt32(magnitud * Math.Cos(anguloRadiano));
+            comY = Convert.ToInt32(magnitud * Math.Sin(anguloRadiano));
         }
 
-        public void DibujarVector(PictureBox plano)
+        public virtual void calcularCoordenadas()
+        {
+            X = Convert.ToInt32(magnitud * Math.Cos(anguloRadiano));
+            Y = Convert.ToInt32(magnitud * Math.Sin(anguloRadiano));
+        }
+
+        public virtual void DibujarVector(PictureBox plano)
         {
             g = plano.CreateGraphics();
             p = new Pen(Color.Red, 4);

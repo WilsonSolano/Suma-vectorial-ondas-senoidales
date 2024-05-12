@@ -9,7 +9,6 @@ namespace Calculadoradevectore
         Graphics g, h;
         Pen p, q;
         bool existe = false;
-        int numeroVector = 2;
         List<vectorClass> Vectores = new List<vectorClass>();
 
         public Form1()
@@ -42,27 +41,50 @@ namespace Calculadoradevectore
 
             vector.transformaAngulo();
             vector.calcularCoordenadas();
+            vector.CalcularComponente();
             vector.DibujarVector(plano);
+
 
             Vectores.Add(vector);
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            GenerarCardNew(numeroVector, panel1);
-            numeroVector++;
+            double valor = 0;
+
+            //foreach (var vectorComponentess in vectoresComponentes)
+            //{
+            //    if (vectorComponentess.ContainsKey("componenteX"))
+            //    {
+            //        valor += vectorComponentess["componenteX"];
+            //    }
+            //}
+
+            double pru = Math.Pow(2, 3);
+            label6.Text = pru.ToString();
         }
 
-        //metodos
-        private void GenerarCardNew(int NumVector, Panel panel)
+        private void btnSumar_Click(object sender, EventArgs e)
         {
-            GroupBox vector = new GroupBox();
-            vector.Name = "vector" + NumVector;
-            vector.Text = "Vector " + NumVector;
+            VectorResultanteClass newVector = new VectorResultanteClass();
 
-            panel.Controls.Add(vector);
+            newVector.componenteX(Vectores);
+            newVector.componenteY(Vectores);
+            newVector.calcularModulo();
+            newVector.calcularDireccion();
+            newVector.calcularCoordenadas();
+            newVector.DibujarVector(plano);
+
+            foreach (var vector in Vectores)
+            {
+                ListViewItem lista = new ListViewItem(vector.SGmagnitud.ToString());
+                lista.SubItems.Add(vector.GComX.ToString());
+                lista.SubItems.Add(vector.GComY.ToString());
+                lista.SubItems.Add(vector.SGangulo.ToString());
+
+                cuadroResumen.Items.Add(lista);
+            }
+
         }
-
-
     }
 }
