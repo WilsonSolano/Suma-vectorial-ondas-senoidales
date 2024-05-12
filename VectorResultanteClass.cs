@@ -16,7 +16,8 @@ namespace Calculadoradevectore
         public double GModulo { get => modulo;}
         public int GX { get => X;}
         public int GY { get => Y;}
-
+        public double GSumComponenteX { get => sumComponenteX;}
+        public double GSumComponenteY { get => sumComponenteY;}
 
         public double componenteX(List<vectorClass> componentesX)
         {

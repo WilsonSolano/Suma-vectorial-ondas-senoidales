@@ -1,3 +1,4 @@
+using System.Numerics;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -44,24 +45,9 @@ namespace Calculadoradevectore
             vector.CalcularComponente();
             vector.DibujarVector(plano);
 
-
             Vectores.Add(vector);
-        }
 
-        private void materialButton1_Click(object sender, EventArgs e)
-        {
-            double valor = 0;
-
-            //foreach (var vectorComponentess in vectoresComponentes)
-            //{
-            //    if (vectorComponentess.ContainsKey("componenteX"))
-            //    {
-            //        valor += vectorComponentess["componenteX"];
-            //    }
-            //}
-
-            double pru = Math.Pow(2, 3);
-            label6.Text = pru.ToString();
+            listaVectoresAgregados(vector.SGmagnitud, vector.SGangulo);
         }
 
         private void btnSumar_Click(object sender, EventArgs e)
@@ -77,14 +63,26 @@ namespace Calculadoradevectore
 
             foreach (var vector in Vectores)
             {
-                ListViewItem lista = new ListViewItem(vector.SGmagnitud.ToString());
-                lista.SubItems.Add(vector.GComX.ToString());
-                lista.SubItems.Add(vector.GComY.ToString());
-                lista.SubItems.Add(vector.SGangulo.ToString());
+                ListViewItem lista = new ListViewItem(vector.SGmagnitud.ToString() + " N");
+                lista.SubItems.Add((vector.GComX).ToString());
+                lista.SubItems.Add((vector.GComY).ToString());
 
                 cuadroResumen.Items.Add(lista);
             }
 
+            ListViewItem sumatorias = new ListViewItem("SUMATORIA");
+            sumatorias.SubItems.Add(newVector.GSumComponenteX.ToString());
+            sumatorias.SubItems.Add(newVector.GSumComponenteY.ToString());
+
+            cuadroResumen.Items.Add(sumatorias);
+        }
+
+        public void listaVectoresAgregados(int magnitud, double angulo)
+        {
+            ListViewItem lista = new ListViewItem(magnitud.ToString() + " N");
+            lista.SubItems.Add(angulo.ToString() + " °");
+
+            LViewVectoresAgregados.Items.Add(lista);
         }
     }
 }
