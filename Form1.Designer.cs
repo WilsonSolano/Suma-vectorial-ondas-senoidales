@@ -36,8 +36,8 @@
             label1 = new Label();
             label2 = new Label();
             btnAna1 = new MaterialSkin.Controls.MaterialButton();
-            unidad = new MaterialSkin.Controls.MaterialTextBox();
             btnSumar = new MaterialSkin.Controls.MaterialButton();
+            unidad = new MaterialSkin.Controls.MaterialTextBox();
             label4 = new Label();
             label5 = new Label();
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
@@ -109,6 +109,7 @@
             angulo.TabIndex = 9;
             angulo.Text = "";
             angulo.TrailingIcon = null;
+            angulo.KeyPress += angulo_KeyPress;
             // 
             // label3
             // 
@@ -157,23 +158,6 @@
             btnAna1.UseVisualStyleBackColor = true;
             btnAna1.Click += btnAna1_Click;
             // 
-            // unidad
-            // 
-            unidad.AnimateReadOnly = false;
-            unidad.BorderStyle = BorderStyle.None;
-            unidad.Depth = 0;
-            unidad.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            unidad.LeadingIcon = null;
-            unidad.Location = new Point(120, 32);
-            unidad.MaxLength = 50;
-            unidad.MouseState = MaterialSkin.MouseState.OUT;
-            unidad.Multiline = false;
-            unidad.Name = "unidad";
-            unidad.Size = new Size(206, 50);
-            unidad.TabIndex = 2;
-            unidad.Text = "";
-            unidad.TrailingIcon = null;
-            // 
             // btnSumar
             // 
             btnSumar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -193,6 +177,24 @@
             btnSumar.UseAccentColor = true;
             btnSumar.UseVisualStyleBackColor = true;
             btnSumar.Click += btnSumar_Click;
+            // 
+            // unidad
+            // 
+            unidad.AnimateReadOnly = false;
+            unidad.BorderStyle = BorderStyle.None;
+            unidad.Depth = 0;
+            unidad.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            unidad.LeadingIcon = null;
+            unidad.Location = new Point(120, 32);
+            unidad.MaxLength = 50;
+            unidad.MouseState = MaterialSkin.MouseState.OUT;
+            unidad.Multiline = false;
+            unidad.Name = "unidad";
+            unidad.Size = new Size(206, 50);
+            unidad.TabIndex = 2;
+            unidad.Text = "";
+            unidad.TrailingIcon = null;
+            unidad.KeyPress += unidad_KeyPress;
             // 
             // label4
             // 
