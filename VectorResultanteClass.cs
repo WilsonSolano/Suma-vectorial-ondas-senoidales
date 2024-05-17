@@ -43,8 +43,8 @@ namespace Calculadoradevectore
         public void calcularDireccion()
         {
             direccionRadianes = Math.Abs(Math.Atan((sumComponenteY / sumComponenteX)));
-            direccionRadianes = (direccionRadianes * -1);
             direccionGrados = (direccionRadianes * 180) / Math.PI;
+            direccionRadianes = (direccionRadianes * -1);
         }
 
         public override void calcularCoordenadas()
@@ -55,18 +55,40 @@ namespace Calculadoradevectore
 
         public override void DibujarVector(PictureBox plano, Bitmap mapaVector)
         {
-            g = plano.CreateGraphics();
-            p = new Pen(Color.Aqua, 4);
 
-            g.DrawLine(p, 250, 250, (X + 250), (Y + 250));
+            using (Graphics g = Graphics.FromImage(mapaVector))
+            {
+                using (Pen p = new Pen(Color.Aqua, 4))
+                {
+                    g.DrawLine(p, 250, 250, (X + 250), (Y + 250));
 
 
-            float angle = (float)Math.Atan2((Y + 250) - 250, (X + 250) - 250);
-            PointF[] arrowPoints = new PointF[3];
-            arrowPoints[0] = new PointF((X + 250), (Y + 250));
-            arrowPoints[1] = new PointF((X + 250) - 30 * (float)Math.Cos(angle - Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle - Math.PI / 5));
-            arrowPoints[2] = new PointF((X + 250) - 30 * (float)Math.Cos(angle + Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle + Math.PI / 5));
-            g.FillPolygon(Brushes.Aqua, arrowPoints);
+                    float angle = (float)Math.Atan2((Y + 250) - 250, (X + 250) - 250);
+                    PointF[] arrowPoints = new PointF[3];
+                    arrowPoints[0] = new PointF((X + 250), (Y + 250));
+                    arrowPoints[1] = new PointF((X + 250) - 30 * (float)Math.Cos(angle - Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle - Math.PI / 5));
+                    arrowPoints[2] = new PointF((X + 250) - 30 * (float)Math.Cos(angle + Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle + Math.PI / 5));
+                    g.FillPolygon(Brushes.Aqua, arrowPoints);
+
+                    plano.Image = mapaVector;
+                }
+            }
+        }
+
+        public void imprimirModulo(Label labelModulo, Label labelModuloResul)
+        {
+            string componenteXimprimir = ($"fr =√ ({sumComponenteX})^2 + ({sumComponenteY * -1})^2");
+            string resulX = $"fr = {modulo}";
+            labelModulo.Text = componenteXimprimir;
+            labelModuloResul.Text = resulX;
+        }
+
+        public void imprimirDireccion(Label labelDireccion, Label labelModuloResul)
+        {
+            string imprimir = $"⌀ = Tan^-1({sumComponenteY * -1} / {sumComponenteX})";
+            string resulX = $"⌀ = {direccionGrados}";
+            labelDireccion.Text = imprimir;
+            labelModuloResul.Text = resulX;
         }
     }
 }

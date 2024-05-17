@@ -35,14 +35,18 @@ namespace Calculadoradevectore
             comY = Convert.ToInt32(magnitud * Math.Sin(anguloRadiano));
         }
 
-        public void imprimirComponentes(Label labelX, Label labelY)
+        public void imprimirComponentes(Label labelX, Label labelY, Label labelXre, Label labelYre)
         {
-            StringBuilder componenteXimprimir = new StringBuilder($"fx = {magnitud} * Cos{angulo} \nfx = {comX}");
-            labelX.Text = componenteXimprimir.ToString();
+            string componenteXimprimir = ($"fx = {magnitud} * Cos {angulo}");
+            string resulX = $"fx = {comX}";
+            labelX.Text = componenteXimprimir;
+            labelXre.Text = resulX;
             
 
-            StringBuilder componenteYimprimir = new StringBuilder($"fy = {magnitud} * Cos{angulo} \nfy = {comY * -1}");
-            labelY.Text = componenteYimprimir.ToString();
+            string componenteYimprimir = ($"fy = {magnitud} * Sen {angulo}");
+            string resulY = $"fy = {comY * -1}";
+            labelY.Text = componenteYimprimir;
+            labelYre.Text = resulY;
         }
 
         public virtual void calcularCoordenadas()
@@ -53,7 +57,6 @@ namespace Calculadoradevectore
 
         public virtual void DibujarVector(PictureBox plano, Bitmap mapaVector)
         {
-
             using (Graphics g = Graphics.FromImage(mapaVector))
             {
                 using (Pen p = new Pen(Color.Red, 4))

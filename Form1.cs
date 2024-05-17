@@ -12,6 +12,8 @@ namespace Calculadoradevectore
         bool existe = false;
         List<vectorClass> Vectores = new List<vectorClass>();
         Bitmap mapavectores = new Bitmap(500, 500);
+        Bitmap vectorResultanteMapa = new Bitmap(500, 500);
+
 
         public Form1()
         {
@@ -41,7 +43,18 @@ namespace Calculadoradevectore
                         g.DrawLine(p, 250, 0, 250, 500);
                     }
                 }
+
+                using (Graphics g = Graphics.FromImage(vectorResultanteMapa))
+                {
+                    using (Pen p = new Pen(Color.Blue, 4))
+                    {
+                        g.DrawLine(p, 0, 250, 500, 250);
+                        g.DrawLine(p, 250, 0, 250, 500);
+                    }
+                }
+
                 plano.Image = mapavectores;
+                planoResul.Image = vectorResultanteMapa;
                 existe = true;
             }
 
@@ -65,9 +78,7 @@ namespace Calculadoradevectore
                 unidad.Clear();
                 unidad.Focus();
 
-                comboFuerzasCompo.Items.Add($"Fuerza 1 : {vector.SGmagnitud}N");
-
-                //vector.imprimirComponentes(imprimirComponentesX, imprimirComponentesY);
+                comboFuerzasCompo.Items.Add($"Fuerza {Vectores.Count} : {vector.SGmagnitud}N");
             }
         }
 
@@ -82,7 +93,7 @@ namespace Calculadoradevectore
                 newVector.calcularModulo();
                 newVector.calcularDireccion();
                 newVector.calcularCoordenadas();
-                newVector.DibujarVector(plano, mapavectores);
+                newVector.DibujarVector(planoResul, vectorResultanteMapa);
 
                 foreach (var vector in Vectores)
                 {
@@ -95,9 +106,13 @@ namespace Calculadoradevectore
 
                 ListViewItem sumatorias = new ListViewItem("SUMATORIA");
                 sumatorias.SubItems.Add(newVector.GSumComponenteX.ToString());
-                sumatorias.SubItems.Add(newVector.GSumComponenteY.ToString());
-
+                sumatorias.SubItems.Add((newVector.GSumComponenteY * -1).ToString());
                 cuadroResumen.Items.Add(sumatorias);
+
+                newVector.imprimirModulo(moduloImpresion, moduloResul);
+                newVector.imprimirDireccion(labelImprimirDireccion, imprimirDireccionResul);
+
+                pestañas.SelectTab("tabResultados");
             }
             else
             {
@@ -160,7 +175,12 @@ namespace Calculadoradevectore
 
         private void comboFuerzasCompo_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Vectores[comboFuerzasCompo.SelectedIndex].imprimirComponentes(imprimirComponentesX, imprimirComponentesY);
+            Vectores[comboFuerzasCompo.SelectedIndex].imprimirComponentes(imprimirComponentesX, imprimirComponentesY, ComponenteXresul, ComponenteYresul);
+        }
+
+        private void materialExpansionPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
