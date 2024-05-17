@@ -68,10 +68,9 @@
             // plano
             // 
             plano.BorderStyle = BorderStyle.FixedSingle;
-            plano.Dock = DockStyle.Fill;
-            plano.Location = new Point(0, 0);
+            plano.Location = new Point(2, 2);
             plano.Name = "plano";
-            plano.Size = new Size(498, 498);
+            plano.Size = new Size(500, 500);
             plano.TabIndex = 0;
             plano.TabStop = false;
             // 
@@ -300,7 +299,7 @@
             panelPlano.Controls.Add(plano);
             panelPlano.Location = new Point(774, 29);
             panelPlano.Name = "panelPlano";
-            panelPlano.Size = new Size(500, 500);
+            panelPlano.Size = new Size(506, 506);
             panelPlano.TabIndex = 3;
             // 
             // tabPage2

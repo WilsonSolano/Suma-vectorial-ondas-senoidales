@@ -53,7 +53,7 @@ namespace Calculadoradevectore
             Y = Convert.ToInt32(modulo * Math.Sin(direccionRadianes));
         }
 
-        public override void DibujarVector(PictureBox plano)
+        public override void DibujarVector(PictureBox plano, Bitmap mapaVector)
         {
             g = plano.CreateGraphics();
             p = new Pen(Color.Aqua, 4);

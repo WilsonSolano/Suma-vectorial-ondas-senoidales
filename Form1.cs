@@ -7,10 +7,11 @@ namespace Calculadoradevectore
 {
     public partial class Form1 : MaterialSkin.Controls.MaterialForm
     {
-        Graphics g, h;
-        Pen p, q;
+        //Graphics g, h;
+        //Pen p, q;
         bool existe = false;
         List<vectorClass> Vectores = new List<vectorClass>();
+        Bitmap mapavectores = new Bitmap(500, 500);
 
         public Form1()
         {
@@ -26,12 +27,21 @@ namespace Calculadoradevectore
         {
             if (!existe)
             {
-                g = plano.CreateGraphics();
-                p = new Pen(Color.Blue, 4);
+                //g = plano.CreateGraphics();
+                //p = new Pen(Color.Blue, 4);
 
-                g.DrawLine(p, 0, 250, 500, 250);
-                g.DrawLine(p, 250, 0, 250, 500);
+                //g.DrawLine(p, 0, 250, 500, 250);
+                //g.DrawLine(p, 250, 0, 250, 500);
 
+                using (Graphics g = Graphics.FromImage(mapavectores))
+                {
+                    using (Pen p = new Pen(Color.Blue, 4))
+                    {
+                        g.DrawLine(p, 0, 250, 500, 250);
+                        g.DrawLine(p, 250, 0, 250, 500);
+                    }
+                }
+                plano.Image = mapavectores;
                 existe = true;
             }
 
@@ -45,7 +55,7 @@ namespace Calculadoradevectore
                 vector.transformaAngulo();
                 vector.calcularCoordenadas();
                 vector.CalcularComponente();
-                vector.DibujarVector(plano);
+                vector.DibujarVector(plano, mapavectores);
 
                 Vectores.Add(vector);
 
@@ -68,7 +78,7 @@ namespace Calculadoradevectore
                 newVector.calcularModulo();
                 newVector.calcularDireccion();
                 newVector.calcularCoordenadas();
-                newVector.DibujarVector(plano);
+                newVector.DibujarVector(plano, mapavectores);
 
                 foreach (var vector in Vectores)
                 {
@@ -125,10 +135,17 @@ namespace Calculadoradevectore
                     angulo.Focus();
                     return false;
                 }
+                else if(Convert.ToInt32(angulo.Text) <= 0 || Convert.ToInt32(unidad.Text) <= 0)
+                {
+                    MessageBox.Show("Ingrese un angulo o magnitud valida (mayores a 0)", "DATOS FUERA DE RANGO", MessageBoxButtons.OK);
+                    return false;
+
+                }
                 else
                 {
                     return true;
                 }
+
             }
             else
             {

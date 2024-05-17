@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.AxHost;
 
 namespace Calculadoradevectore
@@ -40,20 +41,40 @@ namespace Calculadoradevectore
             Y = Convert.ToInt32(magnitud * Math.Sin(anguloRadiano));
         }
 
-        public virtual void DibujarVector(PictureBox plano)
+        public virtual void DibujarVector(PictureBox plano, Bitmap mapaVector)
         {
-            g = plano.CreateGraphics();
-            p = new Pen(Color.Red, 4);
+            //Bitmap mapaVector = new Bitmap(500, 500);
 
-            g.DrawLine(p, 250, 250, (X + 250), (Y + 250));
+            using (Graphics g = Graphics.FromImage(mapaVector))
+            {
+                using (Pen p = new Pen(Color.Red, 4))
+                {
+                    g.DrawLine(p, 250, 250, (X + 250), (Y + 250));
 
 
-            float angle = (float)Math.Atan2((Y + 250) - 250,(X + 250) - 250);
-            PointF[] arrowPoints = new PointF[3];
-            arrowPoints[0] = new PointF((X + 250),(Y + 250));
-            arrowPoints[1] = new PointF((X + 250) - 30 * (float)Math.Cos(angle - Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle - Math.PI / 5));
-            arrowPoints[2] = new PointF((X + 250) - 30 * (float)Math.Cos(angle + Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle + Math.PI / 5));
-            g.FillPolygon(Brushes.Red, arrowPoints);
+                    float angle = (float)Math.Atan2((Y + 250) - 250, (X + 250) - 250);
+                    PointF[] arrowPoints = new PointF[3];
+                    arrowPoints[0] = new PointF((X + 250), (Y + 250));
+                    arrowPoints[1] = new PointF((X + 250) - 30 * (float)Math.Cos(angle - Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle - Math.PI / 5));
+                    arrowPoints[2] = new PointF((X + 250) - 30 * (float)Math.Cos(angle + Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle + Math.PI / 5));
+                    g.FillPolygon(Brushes.Red, arrowPoints);
+
+                    plano.Image = mapaVector;
+                }
+            }
+
+            //g = plano.CreateGraphics();
+            //p = new Pen(Color.Red, 4);
+
+            //g.DrawLine(p, 250, 250, (X + 250), (Y + 250));
+
+
+            //float angle = (float)Math.Atan2((Y + 250) - 250,(X + 250) - 250);
+            //PointF[] arrowPoints = new PointF[3];
+            //arrowPoints[0] = new PointF((X + 250),(Y + 250));
+            //arrowPoints[1] = new PointF((X + 250) - 30 * (float)Math.Cos(angle - Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle - Math.PI / 5));
+            //arrowPoints[2] = new PointF((X + 250) - 30 * (float)Math.Cos(angle + Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle + Math.PI / 5));
+            //g.FillPolygon(Brushes.Red, arrowPoints);
         }
     }
 }
