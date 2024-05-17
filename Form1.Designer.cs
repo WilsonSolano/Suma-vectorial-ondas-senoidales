@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewGroup listViewGroup1 = new ListViewGroup("ListViewGroup", HorizontalAlignment.Left);
             plano = new PictureBox();
             groupBox1 = new GroupBox();
             angulo = new MaterialSkin.Controls.MaterialTextBox();
@@ -49,11 +48,16 @@
             columnHeader4 = new ColumnHeader();
             panelPlano = new Panel();
             tabPage2 = new TabPage();
-            materialExpansionPanel1 = new MaterialSkin.Controls.MaterialExpansionPanel();
+            materialExpansionPanel3 = new MaterialSkin.Controls.MaterialExpansionPanel();
             cuadroResumen = new MaterialSkin.Controls.MaterialListView();
-            Fuerzas = new ColumnHeader();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
+            materialExpansionPanel2 = new MaterialSkin.Controls.MaterialExpansionPanel();
+            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            imprimirComponentesY = new Label();
+            imprimirComponentesX = new Label();
+            comboFuerzasCompo = new MaterialSkin.Controls.MaterialComboBox();
             materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             ((System.ComponentModel.ISupportInitialize)plano).BeginInit();
             groupBox1.SuspendLayout();
@@ -62,7 +66,8 @@
             panel1.SuspendLayout();
             panelPlano.SuspendLayout();
             tabPage2.SuspendLayout();
-            materialExpansionPanel1.SuspendLayout();
+            materialExpansionPanel3.SuspendLayout();
+            materialExpansionPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // plano
@@ -220,12 +225,12 @@
             materialTabControl1.Controls.Add(tabPage1);
             materialTabControl1.Controls.Add(tabPage2);
             materialTabControl1.Depth = 0;
-            materialTabControl1.Location = new Point(-2, 118);
+            materialTabControl1.Location = new Point(-2, 110);
             materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             materialTabControl1.Multiline = true;
             materialTabControl1.Name = "materialTabControl1";
             materialTabControl1.SelectedIndex = 0;
-            materialTabControl1.Size = new Size(1334, 565);
+            materialTabControl1.Size = new Size(1334, 573);
             materialTabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -238,7 +243,7 @@
             tabPage1.Location = new Point(4, 28);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1326, 533);
+            tabPage1.Size = new Size(1326, 541);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Suma Vectorial";
             tabPage1.UseVisualStyleBackColor = true;
@@ -304,76 +309,150 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(materialExpansionPanel1);
+            tabPage2.Controls.Add(materialExpansionPanel3);
+            tabPage2.Controls.Add(materialExpansionPanel2);
             tabPage2.Location = new Point(4, 28);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1326, 533);
+            tabPage2.Size = new Size(1326, 541);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Resultados";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // materialExpansionPanel1
+            // materialExpansionPanel3
             // 
-            materialExpansionPanel1.BackColor = Color.FromArgb(255, 255, 255);
-            materialExpansionPanel1.CancelButtonText = "CERRAR";
-            materialExpansionPanel1.Collapse = true;
-            materialExpansionPanel1.Controls.Add(cuadroResumen);
-            materialExpansionPanel1.Depth = 0;
-            materialExpansionPanel1.Description = "";
-            materialExpansionPanel1.DrawShadows = false;
-            materialExpansionPanel1.ExpandHeight = 462;
-            materialExpansionPanel1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialExpansionPanel1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialExpansionPanel1.Location = new Point(25, 19);
-            materialExpansionPanel1.Margin = new Padding(16, 1, 16, 0);
-            materialExpansionPanel1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialExpansionPanel1.Name = "materialExpansionPanel1";
-            materialExpansionPanel1.Padding = new Padding(24, 64, 24, 16);
-            materialExpansionPanel1.ShowCollapseExpand = false;
-            materialExpansionPanel1.Size = new Size(480, 48);
-            materialExpansionPanel1.TabIndex = 1;
-            materialExpansionPanel1.Title = "Cuadro Resumen";
-            materialExpansionPanel1.ValidationButtonText = "";
+            materialExpansionPanel3.BackColor = Color.FromArgb(255, 255, 255);
+            materialExpansionPanel3.CancelButtonText = "CERRAR";
+            materialExpansionPanel3.Collapse = true;
+            materialExpansionPanel3.Controls.Add(cuadroResumen);
+            materialExpansionPanel3.Depth = 0;
+            materialExpansionPanel3.Description = "";
+            materialExpansionPanel3.ExpandHeight = 462;
+            materialExpansionPanel3.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialExpansionPanel3.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialExpansionPanel3.Location = new Point(44, 43);
+            materialExpansionPanel3.Margin = new Padding(16, 1, 16, 0);
+            materialExpansionPanel3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialExpansionPanel3.Name = "materialExpansionPanel3";
+            materialExpansionPanel3.Padding = new Padding(24, 64, 24, 16);
+            materialExpansionPanel3.Size = new Size(480, 48);
+            materialExpansionPanel3.TabIndex = 3;
+            materialExpansionPanel3.Title = "Cuadro Resumen";
+            materialExpansionPanel3.ValidationButtonText = "";
             // 
             // cuadroResumen
             // 
             cuadroResumen.AutoSizeTable = false;
             cuadroResumen.BackColor = Color.FromArgb(255, 255, 255);
             cuadroResumen.BorderStyle = BorderStyle.None;
-            cuadroResumen.Columns.AddRange(new ColumnHeader[] { Fuerzas, columnHeader1, columnHeader2 });
+            cuadroResumen.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7 });
             cuadroResumen.Depth = 0;
             cuadroResumen.FullRowSelect = true;
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "listViewGroup1";
-            cuadroResumen.Groups.AddRange(new ListViewGroup[] { listViewGroup1 });
-            cuadroResumen.Location = new Point(43, 64);
+            cuadroResumen.Location = new Point(39, 67);
             cuadroResumen.MinimumSize = new Size(200, 100);
             cuadroResumen.MouseLocation = new Point(-1, -1);
             cuadroResumen.MouseState = MaterialSkin.MouseState.OUT;
             cuadroResumen.Name = "cuadroResumen";
             cuadroResumen.OwnerDraw = true;
             cuadroResumen.Size = new Size(400, 328);
-            cuadroResumen.TabIndex = 0;
+            cuadroResumen.TabIndex = 2;
             cuadroResumen.UseCompatibleStateImageBehavior = false;
             cuadroResumen.View = View.Details;
             // 
-            // Fuerzas
+            // columnHeader5
             // 
-            Fuerzas.Text = "fuerzas";
-            Fuerzas.Width = 134;
+            columnHeader5.Text = "Fuerzas";
+            columnHeader5.Width = 134;
             // 
-            // columnHeader1
+            // columnHeader6
             // 
-            columnHeader1.Text = "X";
-            columnHeader1.TextAlign = HorizontalAlignment.Center;
-            columnHeader1.Width = 133;
+            columnHeader6.Text = "X";
+            columnHeader6.TextAlign = HorizontalAlignment.Center;
+            columnHeader6.Width = 133;
             // 
-            // columnHeader2
+            // columnHeader7
             // 
-            columnHeader2.Text = "Y";
-            columnHeader2.TextAlign = HorizontalAlignment.Center;
-            columnHeader2.Width = 133;
+            columnHeader7.Text = "Y";
+            columnHeader7.TextAlign = HorizontalAlignment.Center;
+            columnHeader7.Width = 133;
+            // 
+            // materialExpansionPanel2
+            // 
+            materialExpansionPanel2.BackColor = Color.FromArgb(255, 255, 255);
+            materialExpansionPanel2.CancelButtonText = "CERRAR";
+            materialExpansionPanel2.Controls.Add(materialLabel1);
+            materialExpansionPanel2.Controls.Add(imprimirComponentesY);
+            materialExpansionPanel2.Controls.Add(imprimirComponentesX);
+            materialExpansionPanel2.Controls.Add(comboFuerzasCompo);
+            materialExpansionPanel2.Depth = 0;
+            materialExpansionPanel2.Description = "";
+            materialExpansionPanel2.ExpandHeight = 345;
+            materialExpansionPanel2.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialExpansionPanel2.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialExpansionPanel2.Location = new Point(44, 110);
+            materialExpansionPanel2.Margin = new Padding(16);
+            materialExpansionPanel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialExpansionPanel2.Name = "materialExpansionPanel2";
+            materialExpansionPanel2.Padding = new Padding(24, 64, 24, 16);
+            materialExpansionPanel2.Size = new Size(480, 345);
+            materialExpansionPanel2.TabIndex = 2;
+            materialExpansionPanel2.Title = "Calcular Componentes";
+            materialExpansionPanel2.ValidationButtonText = "";
+            // 
+            // materialLabel1
+            // 
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel1.Location = new Point(54, 86);
+            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(42, 19);
+            materialLabel1.TabIndex = 7;
+            materialLabel1.Text = "Para :";
+            // 
+            // imprimirComponentesY
+            // 
+            imprimirComponentesY.AutoSize = true;
+            imprimirComponentesY.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            imprimirComponentesY.Location = new Point(54, 207);
+            imprimirComponentesY.Name = "imprimirComponentesY";
+            imprimirComponentesY.Size = new Size(137, 24);
+            imprimirComponentesY.TabIndex = 6;
+            imprimirComponentesY.Text = "Componente Y";
+            // 
+            // imprimirComponentesX
+            // 
+            imprimirComponentesX.AutoSize = true;
+            imprimirComponentesX.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            imprimirComponentesX.Location = new Point(54, 154);
+            imprimirComponentesX.Name = "imprimirComponentesX";
+            imprimirComponentesX.Size = new Size(139, 24);
+            imprimirComponentesX.TabIndex = 5;
+            imprimirComponentesX.Text = "Componente X";
+            // 
+            // comboFuerzasCompo
+            // 
+            comboFuerzasCompo.AutoResize = false;
+            comboFuerzasCompo.BackColor = Color.FromArgb(255, 255, 255);
+            comboFuerzasCompo.Depth = 0;
+            comboFuerzasCompo.DrawMode = DrawMode.OwnerDrawVariable;
+            comboFuerzasCompo.DropDownHeight = 174;
+            comboFuerzasCompo.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboFuerzasCompo.DropDownWidth = 121;
+            comboFuerzasCompo.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            comboFuerzasCompo.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            comboFuerzasCompo.FormattingEnabled = true;
+            comboFuerzasCompo.IntegralHeight = false;
+            comboFuerzasCompo.ItemHeight = 43;
+            comboFuerzasCompo.Location = new Point(158, 67);
+            comboFuerzasCompo.MaxDropDownItems = 4;
+            comboFuerzasCompo.MouseState = MaterialSkin.MouseState.OUT;
+            comboFuerzasCompo.Name = "comboFuerzasCompo";
+            comboFuerzasCompo.Size = new Size(228, 49);
+            comboFuerzasCompo.StartIndex = 0;
+            comboFuerzasCompo.TabIndex = 3;
+            comboFuerzasCompo.SelectionChangeCommitted += comboFuerzasCompo_SelectionChangeCommitted;
             // 
             // materialTabSelector1
             // 
@@ -381,7 +460,7 @@
             materialTabSelector1.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
             materialTabSelector1.Depth = 0;
             materialTabSelector1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTabSelector1.Location = new Point(-2, 64);
+            materialTabSelector1.Location = new Point(-2, 56);
             materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             materialTabSelector1.Name = "materialTabSelector1";
             materialTabSelector1.Size = new Size(1334, 48);
@@ -409,8 +488,10 @@
             panel1.PerformLayout();
             panelPlano.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
-            materialExpansionPanel1.ResumeLayout(false);
-            materialExpansionPanel1.PerformLayout();
+            materialExpansionPanel3.ResumeLayout(false);
+            materialExpansionPanel3.PerformLayout();
+            materialExpansionPanel2.ResumeLayout(false);
+            materialExpansionPanel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -429,10 +510,6 @@
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private MaterialSkin.Controls.MaterialListView cuadroResumen;
-        private ColumnHeader Fuerzas;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private Label label1;
         private Panel panelPlano;
@@ -441,6 +518,15 @@
         private Panel panel1;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
-        private MaterialSkin.Controls.MaterialExpansionPanel materialExpansionPanel1;
+        private MaterialSkin.Controls.MaterialListView cuadroResumen;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader7;
+        private MaterialSkin.Controls.MaterialExpansionPanel materialExpansionPanel2;
+        private MaterialSkin.Controls.MaterialComboBox comboFuerzasCompo;
+        private MaterialSkin.Controls.MaterialExpansionPanel materialExpansionPanel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private Label imprimirComponentesY;
+        private Label imprimirComponentesX;
     }
 }

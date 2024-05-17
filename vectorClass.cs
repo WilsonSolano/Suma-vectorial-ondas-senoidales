@@ -35,6 +35,16 @@ namespace Calculadoradevectore
             comY = Convert.ToInt32(magnitud * Math.Sin(anguloRadiano));
         }
 
+        public void imprimirComponentes(Label labelX, Label labelY)
+        {
+            StringBuilder componenteXimprimir = new StringBuilder($"fx = {magnitud} * Cos{angulo} \nfx = {comX}");
+            labelX.Text = componenteXimprimir.ToString();
+            
+
+            StringBuilder componenteYimprimir = new StringBuilder($"fy = {magnitud} * Cos{angulo} \nfy = {comY * -1}");
+            labelY.Text = componenteYimprimir.ToString();
+        }
+
         public virtual void calcularCoordenadas()
         {
             X = Convert.ToInt32(magnitud * Math.Cos(anguloRadiano));
@@ -43,7 +53,6 @@ namespace Calculadoradevectore
 
         public virtual void DibujarVector(PictureBox plano, Bitmap mapaVector)
         {
-            //Bitmap mapaVector = new Bitmap(500, 500);
 
             using (Graphics g = Graphics.FromImage(mapaVector))
             {
@@ -62,19 +71,6 @@ namespace Calculadoradevectore
                     plano.Image = mapaVector;
                 }
             }
-
-            //g = plano.CreateGraphics();
-            //p = new Pen(Color.Red, 4);
-
-            //g.DrawLine(p, 250, 250, (X + 250), (Y + 250));
-
-
-            //float angle = (float)Math.Atan2((Y + 250) - 250,(X + 250) - 250);
-            //PointF[] arrowPoints = new PointF[3];
-            //arrowPoints[0] = new PointF((X + 250),(Y + 250));
-            //arrowPoints[1] = new PointF((X + 250) - 30 * (float)Math.Cos(angle - Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle - Math.PI / 5));
-            //arrowPoints[2] = new PointF((X + 250) - 30 * (float)Math.Cos(angle + Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle + Math.PI / 5));
-            //g.FillPolygon(Brushes.Red, arrowPoints);
         }
     }
 }

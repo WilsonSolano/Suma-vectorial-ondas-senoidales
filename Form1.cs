@@ -64,6 +64,10 @@ namespace Calculadoradevectore
                 angulo.Clear();
                 unidad.Clear();
                 unidad.Focus();
+
+                comboFuerzasCompo.Items.Add($"Fuerza 1 : {vector.SGmagnitud}N");
+
+                //vector.imprimirComponentes(imprimirComponentesX, imprimirComponentesY);
             }
         }
 
@@ -84,7 +88,7 @@ namespace Calculadoradevectore
                 {
                     ListViewItem lista = new ListViewItem(vector.SGmagnitud.ToString() + " N");
                     lista.SubItems.Add((vector.GComX).ToString());
-                    lista.SubItems.Add((vector.GComY).ToString());
+                    lista.SubItems.Add((vector.GComY * -1).ToString());
 
                     cuadroResumen.Items.Add(lista);
                 }
@@ -135,7 +139,7 @@ namespace Calculadoradevectore
                     angulo.Focus();
                     return false;
                 }
-                else if(Convert.ToInt32(angulo.Text) <= 0 || Convert.ToInt32(unidad.Text) <= 0)
+                else if (Convert.ToInt32(angulo.Text) <= 0 || Convert.ToInt32(unidad.Text) <= 0)
                 {
                     MessageBox.Show("Ingrese un angulo o magnitud valida (mayores a 0)", "DATOS FUERA DE RANGO", MessageBoxButtons.OK);
                     return false;
@@ -149,9 +153,14 @@ namespace Calculadoradevectore
             }
             else
             {
-                MessageBox.Show("Llene todos los campos requeridos","DATOS VACIOS", MessageBoxButtons.OK);
+                MessageBox.Show("Llene todos los campos requeridos", "DATOS VACIOS", MessageBoxButtons.OK);
                 return false;
             }
+        }
+
+        private void comboFuerzasCompo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Vectores[comboFuerzasCompo.SelectedIndex].imprimirComponentes(imprimirComponentesX, imprimirComponentesY);
         }
     }
 }
