@@ -48,6 +48,12 @@
             columnHeader4 = new ColumnHeader();
             panelPlano = new Panel();
             tabResultados = new TabPage();
+            datosNuevoVector = new GroupBox();
+            moduloResultante = new MaterialSkin.Controls.MaterialLabel();
+            direccionResultante = new MaterialSkin.Controls.MaterialLabel();
+            label7 = new Label();
+            label9 = new Label();
+            materialButton1 = new MaterialSkin.Controls.MaterialButton();
             materialExpansionPanel7 = new MaterialSkin.Controls.MaterialExpansionPanel();
             cuadroResumen = new MaterialSkin.Controls.MaterialListView();
             columnHeader5 = new ColumnHeader();
@@ -75,6 +81,7 @@
             panel1.SuspendLayout();
             panelPlano.SuspendLayout();
             tabResultados.SuspendLayout();
+            datosNuevoVector.SuspendLayout();
             materialExpansionPanel7.SuspendLayout();
             materialExpansionPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)planoResul).BeginInit();
@@ -321,6 +328,7 @@
             // 
             // tabResultados
             // 
+            tabResultados.Controls.Add(datosNuevoVector);
             tabResultados.Controls.Add(materialExpansionPanel7);
             tabResultados.Controls.Add(materialExpansionPanel6);
             tabResultados.Controls.Add(planoResul);
@@ -334,6 +342,87 @@
             tabResultados.Text = "Resultados";
             tabResultados.UseVisualStyleBackColor = true;
             // 
+            // datosNuevoVector
+            // 
+            datosNuevoVector.BackColor = Color.Gainsboro;
+            datosNuevoVector.Controls.Add(moduloResultante);
+            datosNuevoVector.Controls.Add(direccionResultante);
+            datosNuevoVector.Controls.Add(label7);
+            datosNuevoVector.Controls.Add(label9);
+            datosNuevoVector.Controls.Add(materialButton1);
+            datosNuevoVector.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            datosNuevoVector.Location = new Point(101, 290);
+            datosNuevoVector.Name = "datosNuevoVector";
+            datosNuevoVector.Size = new Size(480, 234);
+            datosNuevoVector.TabIndex = 14;
+            datosNuevoVector.TabStop = false;
+            datosNuevoVector.Text = "Vector Resultante";
+            // 
+            // moduloResultante
+            // 
+            moduloResultante.AutoSize = true;
+            moduloResultante.Depth = 0;
+            moduloResultante.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            moduloResultante.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            moduloResultante.HighEmphasis = true;
+            moduloResultante.Location = new Point(217, 55);
+            moduloResultante.MouseState = MaterialSkin.MouseState.HOVER;
+            moduloResultante.Name = "moduloResultante";
+            moduloResultante.Size = new Size(135, 24);
+            moduloResultante.TabIndex = 9;
+            moduloResultante.Text = "materialLabel2";
+            // 
+            // direccionResultante
+            // 
+            direccionResultante.AutoSize = true;
+            direccionResultante.Depth = 0;
+            direccionResultante.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            direccionResultante.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            direccionResultante.HighEmphasis = true;
+            direccionResultante.Location = new Point(217, 107);
+            direccionResultante.MouseState = MaterialSkin.MouseState.HOVER;
+            direccionResultante.Name = "direccionResultante";
+            direccionResultante.Size = new Size(135, 24);
+            direccionResultante.TabIndex = 9;
+            direccionResultante.Text = "materialLabel2";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(39, 104);
+            label7.Name = "label7";
+            label7.Size = new Size(96, 25);
+            label7.TabIndex = 8;
+            label7.Text = "Dirección:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(38, 54);
+            label9.Name = "label9";
+            label9.Size = new Size(87, 25);
+            label9.TabIndex = 7;
+            label9.Text = "Modulo: ";
+            // 
+            // materialButton1
+            // 
+            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton1.Depth = 0;
+            materialButton1.HighEmphasis = true;
+            materialButton1.Icon = null;
+            materialButton1.Location = new Point(158, 170);
+            materialButton1.Margin = new Padding(4, 6, 4, 6);
+            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton1.Name = "materialButton1";
+            materialButton1.NoAccentTextColor = Color.Empty;
+            materialButton1.Size = new Size(108, 36);
+            materialButton1.TabIndex = 4;
+            materialButton1.Text = "Ver Vector";
+            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton1.UseAccentColor = false;
+            materialButton1.UseVisualStyleBackColor = true;
+            // 
             // materialExpansionPanel7
             // 
             materialExpansionPanel7.BackColor = Color.FromArgb(255, 255, 255);
@@ -342,10 +431,10 @@
             materialExpansionPanel7.Controls.Add(cuadroResumen);
             materialExpansionPanel7.Depth = 0;
             materialExpansionPanel7.Description = "";
-            materialExpansionPanel7.ExpandHeight = 438;
+            materialExpansionPanel7.ExpandHeight = 371;
             materialExpansionPanel7.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialExpansionPanel7.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialExpansionPanel7.Location = new Point(101, 16);
+            materialExpansionPanel7.Location = new Point(101, 18);
             materialExpansionPanel7.Margin = new Padding(16, 1, 16, 0);
             materialExpansionPanel7.MouseState = MaterialSkin.MouseState.HOVER;
             materialExpansionPanel7.Name = "materialExpansionPanel7";
@@ -362,14 +451,15 @@
             cuadroResumen.BorderStyle = BorderStyle.None;
             cuadroResumen.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7 });
             cuadroResumen.Depth = 0;
+            cuadroResumen.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
             cuadroResumen.FullRowSelect = true;
-            cuadroResumen.Location = new Point(44, 57);
+            cuadroResumen.Location = new Point(39, 57);
             cuadroResumen.MinimumSize = new Size(200, 100);
             cuadroResumen.MouseLocation = new Point(-1, -1);
             cuadroResumen.MouseState = MaterialSkin.MouseState.OUT;
             cuadroResumen.Name = "cuadroResumen";
             cuadroResumen.OwnerDraw = true;
-            cuadroResumen.Size = new Size(400, 308);
+            cuadroResumen.Size = new Size(400, 242);
             cuadroResumen.TabIndex = 2;
             cuadroResumen.UseCompatibleStateImageBehavior = false;
             cuadroResumen.View = View.Details;
@@ -403,7 +493,7 @@
             materialExpansionPanel6.ExpandHeight = 222;
             materialExpansionPanel6.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialExpansionPanel6.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialExpansionPanel6.Location = new Point(101, 83);
+            materialExpansionPanel6.Location = new Point(101, 85);
             materialExpansionPanel6.Margin = new Padding(16, 1, 16, 0);
             materialExpansionPanel6.MouseState = MaterialSkin.MouseState.HOVER;
             materialExpansionPanel6.Name = "materialExpansionPanel6";
@@ -435,7 +525,7 @@
             // planoResul
             // 
             planoResul.BorderStyle = BorderStyle.FixedSingle;
-            planoResul.Location = new Point(733, 18);
+            planoResul.Location = new Point(735, 2);
             planoResul.Name = "planoResul";
             planoResul.Size = new Size(500, 500);
             planoResul.TabIndex = 4;
@@ -453,7 +543,7 @@
             materialExpansionPanel3.ExpandHeight = 200;
             materialExpansionPanel3.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialExpansionPanel3.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialExpansionPanel3.Location = new Point(101, 151);
+            materialExpansionPanel3.Location = new Point(101, 153);
             materialExpansionPanel3.Margin = new Padding(16, 1, 16, 0);
             materialExpansionPanel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialExpansionPanel3.Name = "materialExpansionPanel3";
@@ -506,7 +596,7 @@
             materialExpansionPanel2.ExpandHeight = 317;
             materialExpansionPanel2.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialExpansionPanel2.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialExpansionPanel2.Location = new Point(101, 221);
+            materialExpansionPanel2.Location = new Point(101, 223);
             materialExpansionPanel2.Margin = new Padding(16, 1, 16, 0);
             materialExpansionPanel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialExpansionPanel2.Name = "materialExpansionPanel2";
@@ -640,6 +730,8 @@
             panel1.PerformLayout();
             panelPlano.ResumeLayout(false);
             tabResultados.ResumeLayout(false);
+            datosNuevoVector.ResumeLayout(false);
+            datosNuevoVector.PerformLayout();
             materialExpansionPanel7.ResumeLayout(false);
             materialExpansionPanel7.PerformLayout();
             materialExpansionPanel6.ResumeLayout(false);
@@ -695,5 +787,11 @@
         private MaterialSkin.Controls.MaterialLabel imprimirDireccion;
         private Label imprimirDireccionResul;
         private Label labelImprimirDireccion;
+        private GroupBox datosNuevoVector;
+        private Label label7;
+        private Label label9;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialLabel moduloResultante;
+        private MaterialSkin.Controls.MaterialLabel direccionResultante;
     }
 }

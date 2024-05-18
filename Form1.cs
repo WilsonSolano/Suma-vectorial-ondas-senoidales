@@ -2,6 +2,7 @@ using System.Numerics;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Calculadoradevectore
 {
@@ -14,7 +15,6 @@ namespace Calculadoradevectore
         Bitmap mapavectores = new Bitmap(500, 500);
         Bitmap vectorResultanteMapa = new Bitmap(500, 500);
 
-
         public Form1()
         {
             InitializeComponent();
@@ -23,18 +23,14 @@ namespace Calculadoradevectore
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Cyan400, Primary.Cyan200, Primary.Cyan50, Accent.Lime400, TextShade.BLACK);
+
+            datosNuevoVector.SendToBack();
         }
 
         private void btnAna1_Click(object sender, EventArgs e)
         {
             if (!existe)
             {
-                //g = plano.CreateGraphics();
-                //p = new Pen(Color.Blue, 4);
-
-                //g.DrawLine(p, 0, 250, 500, 250);
-                //g.DrawLine(p, 250, 0, 250, 500);
-
                 using (Graphics g = Graphics.FromImage(mapavectores))
                 {
                     using (Pen p = new Pen(Color.Blue, 4))
@@ -109,6 +105,9 @@ namespace Calculadoradevectore
                 sumatorias.SubItems.Add((newVector.GSumComponenteY * -1).ToString());
                 cuadroResumen.Items.Add(sumatorias);
 
+                moduloResultante.Text = newVector.GModulo.ToString();
+                direccionResultante.Text = Convert.ToInt32(newVector.GDireccionGrados).ToString();
+
                 newVector.imprimirModulo(moduloImpresion, moduloResul);
                 newVector.imprimirDireccion(labelImprimirDireccion, imprimirDireccionResul);
 
@@ -144,6 +143,7 @@ namespace Calculadoradevectore
             }
         }
 
+
         private bool validarTextBox()
         {
             if (!string.IsNullOrWhiteSpace(unidad.Text) && !string.IsNullOrWhiteSpace(angulo.Text))
@@ -154,7 +154,7 @@ namespace Calculadoradevectore
                     angulo.Focus();
                     return false;
                 }
-                else if (Convert.ToInt32(angulo.Text) <= 0 || Convert.ToInt32(unidad.Text) <= 0)
+                else if (Convert.ToInt32(angulo.Text) < 0 || Convert.ToInt32(unidad.Text) <= 0)
                 {
                     MessageBox.Show("Ingrese un angulo o magnitud valida (mayores a 0)", "DATOS FUERA DE RANGO", MessageBoxButtons.OK);
                     return false;
@@ -164,7 +164,6 @@ namespace Calculadoradevectore
                 {
                     return true;
                 }
-
             }
             else
             {
@@ -176,6 +175,7 @@ namespace Calculadoradevectore
         private void comboFuerzasCompo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             Vectores[comboFuerzasCompo.SelectedIndex].imprimirComponentes(imprimirComponentesX, imprimirComponentesY, ComponenteXresul, ComponenteYresul);
+            Vectores[comboFuerzasCompo.SelectedIndex].DibujarVectorPartes(planoResul, vectorResultanteMapa);
         }
 
         private void materialExpansionPanel2_Paint(object sender, PaintEventArgs e)
