@@ -11,9 +11,12 @@ namespace Calculadoradevectore
         //Graphics g, h;
         //Pen p, q;
         bool existe = false;
+        bool menorA85 = false;
         List<vectorClass> Vectores = new List<vectorClass>();
         Bitmap mapavectores = new Bitmap(500, 500);
         Bitmap vectorResultanteMapa = new Bitmap(500, 500);
+        VectorResultanteClass newVector = new VectorResultanteClass();
+
 
         public Form1()
         {
@@ -26,6 +29,8 @@ namespace Calculadoradevectore
 
             datosNuevoVector.SendToBack();
         }
+
+        PictureBox org;
 
         private void btnAna1_Click(object sender, EventArgs e)
         {
@@ -40,17 +45,7 @@ namespace Calculadoradevectore
                     }
                 }
 
-                using (Graphics g = Graphics.FromImage(vectorResultanteMapa))
-                {
-                    using (Pen p = new Pen(Color.Blue, 4))
-                    {
-                        g.DrawLine(p, 0, 250, 500, 250);
-                        g.DrawLine(p, 250, 0, 250, 500);
-                    }
-                }
-
                 plano.Image = mapavectores;
-                planoResul.Image = vectorResultanteMapa;
                 existe = true;
             }
 
@@ -82,7 +77,6 @@ namespace Calculadoradevectore
         {
             if (Vectores.Count != 0)
             {
-                VectorResultanteClass newVector = new VectorResultanteClass();
 
                 newVector.componenteX(Vectores);
                 newVector.componenteY(Vectores);
@@ -112,6 +106,8 @@ namespace Calculadoradevectore
                 newVector.imprimirDireccion(labelImprimirDireccion, imprimirDireccionResul);
 
                 pestañas.SelectTab("tabResultados");
+
+                panelCubrir.Visible = false;
             }
             else
             {
@@ -181,6 +177,24 @@ namespace Calculadoradevectore
         private void materialExpansionPanel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void verVector_Click(object sender, EventArgs e)
+        {
+            newVector.DibujarVector(planoResul, vectorResultanteMapa);
+        }
+
+        private void nuevaSuma_Click(object sender, EventArgs e)
+        {
+            panelCubrir.Visible = true;
+            cuadroResumen.Items.Clear();
+            LViewVectoresAgregados.Items.Clear();
+            Graphics g = Graphics.FromImage(mapavectores);
+            g.Clear(Color.Transparent);
+            Graphics gg = Graphics.FromImage(vectorResultanteMapa);
+            gg.Clear(Color.Transparent);
+            Vectores.Clear();
+            comboFuerzasCompo.Items.Clear();
         }
     }
 }

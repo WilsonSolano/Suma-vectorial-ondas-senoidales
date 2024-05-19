@@ -59,23 +59,25 @@ namespace Calculadoradevectore
         {
             using (Graphics g = Graphics.FromImage(mapaVector))
             {
-                float escala = 0.3f;
+
+                float escala = 0.4f;
+
                 using (Pen p = new Pen(Color.Red, 4))
                 {
                     g.DrawLine(p, 250, 250, ((X * escala) + 250), ((Y * escala) + 250));
 
-
-                    float angle = (float)Math.Atan2((Y + 250) - 250, (X + 250) - 250);
+                    float angle = (float)Math.Atan2(((Y * escala) + 250) - 250, ((X * escala) + 250) - 250);
                     PointF[] arrowPoints = new PointF[3];
                     arrowPoints[0] = new PointF(((X * escala) + 250), ((Y * escala) + 250));
-                    arrowPoints[1] = new PointF(((X * escala) + 250) - 30 * (float)Math.Cos(angle - Math.PI / 5), ((Y * escala) + 250) - 30 * (float)Math.Sin(angle - Math.PI / 5));
-                    arrowPoints[2] = new PointF(((X * escala) + 250) - 30 * (float)Math.Cos(angle + Math.PI / 5), ((Y * escala) + 250) - 30 * (float)Math.Sin(angle + Math.PI / 5));
+                    arrowPoints[1] = new PointF(((X * escala) + 250) - 25 * (float)Math.Cos(angle - Math.PI / 5), ((Y * escala) + 250) - 25 * (float)Math.Sin(angle - Math.PI / 5));
+                    arrowPoints[2] = new PointF(((X * escala) + 250) - 25 * (float)Math.Cos(angle + Math.PI / 5), ((Y * escala) + 250) - 25 * (float)Math.Sin(angle + Math.PI / 5));
                     g.FillPolygon(Brushes.Red, arrowPoints);
 
                     plano.Image = mapaVector;
                 }
             }
         }
+
 
         public virtual void DibujarVectorPartes(PictureBox plano, Bitmap mapaVector)
         {
@@ -93,16 +95,17 @@ namespace Calculadoradevectore
 
             using (Graphics g = Graphics.FromImage(mapaVector))
             {
+                float escala = 0.4f;
+
                 using (Pen p = new Pen(Color.Red, 4))
                 {
-                    g.DrawLine(p, 250, 250, (X + 250), (Y + 250));
+                    g.DrawLine(p, 250, 250, ((X * escala) + 250), ((Y * escala) + 250));
 
-
-                    float angle = (float)Math.Atan2((Y + 250) - 250, (X + 250) - 250);
+                    float angle = (float)Math.Atan2(((Y * escala) + 250) - 250, ((X * escala) + 250) - 250);
                     PointF[] arrowPoints = new PointF[3];
-                    arrowPoints[0] = new PointF((X + 250), (Y + 250));
-                    arrowPoints[1] = new PointF((X + 250) - 30 * (float)Math.Cos(angle - Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle - Math.PI / 5));
-                    arrowPoints[2] = new PointF((X + 250) - 30 * (float)Math.Cos(angle + Math.PI / 5), (Y + 250) - 30 * (float)Math.Sin(angle + Math.PI / 5));
+                    arrowPoints[0] = new PointF(((X * escala) + 250), ((Y * escala) + 250));
+                    arrowPoints[1] = new PointF(((X * escala) + 250) - 25 * (float)Math.Cos(angle - Math.PI / 5), ((Y * escala) + 250) - 25 * (float)Math.Sin(angle - Math.PI / 5));
+                    arrowPoints[2] = new PointF(((X * escala) + 250) - 25 * (float)Math.Cos(angle + Math.PI / 5), ((Y * escala) + 250) - 25 * (float)Math.Sin(angle + Math.PI / 5));
                     g.FillPolygon(Brushes.Red, arrowPoints);
 
                     plano.Image = mapaVector;
