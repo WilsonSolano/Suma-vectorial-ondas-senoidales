@@ -9,72 +9,71 @@ namespace Calculadoradevectore
 {
     internal class ondaSenoidalClass : ISampleProvider
     {
-        private readonly float[] waveTable;
-        private double phase;
-        private double currentPhaseStep;
-        private double targetPhaseStep;
-        private double frequency;
-        private double phaseStepDelta;
-        private bool seekFreq;
+        private readonly float[] tablaOnda;
+        private double fase;
+        private double pasoFaseActual;
+        private double pasoFaseObjetivo;
+        private double frecuencia;
+        private double deltaPasoFase;
+        private bool buscarFrecuencia;
 
-        public ondaSenoidalClass(int sampleRate = 44100)
+        public ondaSenoidalClass(int tasaMuestreo = 44100)
         {
-            WaveFormat = WaveFormat.CreateIeeeFloatWaveFormat(sampleRate, 1);
-            waveTable = new float[sampleRate];
-            for (int index = 0; index < sampleRate; ++index)
-                waveTable[index] = (float)Math.Sin(2 * Math.PI * (double)index / sampleRate);
-            // For sawtooth instead of sine: waveTable[index] = (float)index / sampleRate;
-            Frequency = 1000f;
-            Volume = 0.25f;
-            PortamentoTime = 0.5; // thought this was in seconds, but glide seems to take a bit longer
+            WaveFormat = WaveFormat.CreateIeeeFloatWaveFormat(tasaMuestreo, 1);
+            tablaOnda = new float[tasaMuestreo];
+            for (int indice = 0; indice < tasaMuestreo; ++indice)
+                tablaOnda[indice] = (float)Math.Sin(2 * Math.PI * (double)indice / tasaMuestreo);
+            // Para diente de sierra en lugar de seno: tablaOnda[indice] = (float)indice / tasaMuestreo;
+            Frecuencia = 1000f;
+            Volumen = 0.25f;
+            TiempoPortamento = 0.5; // se pensaba que esto era en segundos, pero el deslizamiento parece tomar un poco más
         }
 
-        public double PortamentoTime { get; set; }
+        public double TiempoPortamento { get; set; }
 
-        public double Frequency
+        public double Frecuencia
         {
             get
             {
-                return frequency;
+                return frecuencia;
             }
             set
             {
-                frequency = value;
-                seekFreq = true;
+                frecuencia = value;
+                buscarFrecuencia = true;
             }
         }
 
-        public float Volume { get; set; }
+        public float Volumen { get; set; }
 
         public WaveFormat WaveFormat { get; private set; }
 
-        public int Read(float[] buffer, int offset, int count)
+        public int Read(float[] buffer, int desplazamiento, int cantidad)
         {
-            if (seekFreq) // process frequency change only once per call to Read
+            if (buscarFrecuencia) // procesa el cambio de frecuencia solo una vez por llamada a Leer
             {
-                targetPhaseStep = waveTable.Length * (frequency / WaveFormat.SampleRate);
-
-                phaseStepDelta = (targetPhaseStep - currentPhaseStep) / (WaveFormat.SampleRate * PortamentoTime);
-                seekFreq = false;
+                pasoFaseObjetivo = tablaOnda.Length * (frecuencia / WaveFormat.SampleRate);
+                deltaPasoFase = (pasoFaseObjetivo - pasoFaseActual) / (WaveFormat.SampleRate * TiempoPortamento);
+                buscarFrecuencia = false;
             }
-            var vol = Volume; // process volume change only once per call to Read
-            for (int n = 0; n < count; ++n)
+            var vol = Volumen; // procesa el cambio de volumen solo una vez por llamada a Leer
+            for (int n = 0; n < cantidad; ++n)
             {
-                int waveTableIndex = (int)phase % waveTable.Length;
-                buffer[n + offset] = waveTable[waveTableIndex] * vol;
-                phase += currentPhaseStep;
-                if (phase > waveTable.Length)
-                    phase -= waveTable.Length;
-                if (currentPhaseStep != targetPhaseStep)
+                int indiceTablaOnda = (int)fase % tablaOnda.Length;
+                buffer[n + desplazamiento] = tablaOnda[indiceTablaOnda] * vol;
+                fase += pasoFaseActual;
+                if (fase > tablaOnda.Length)
+                    fase -= tablaOnda.Length;
+                if (pasoFaseActual != pasoFaseObjetivo)
                 {
-                    currentPhaseStep += phaseStepDelta;
-                    if (phaseStepDelta > 0.0 && currentPhaseStep > targetPhaseStep)
-                        currentPhaseStep = targetPhaseStep;
-                    else if (phaseStepDelta < 0.0 && currentPhaseStep < targetPhaseStep)
-                        currentPhaseStep = targetPhaseStep;
+                    pasoFaseActual += deltaPasoFase;
+                    if (deltaPasoFase > 0.0 && pasoFaseActual > pasoFaseObjetivo)
+                        pasoFaseActual = pasoFaseObjetivo;
+                    else if (deltaPasoFase < 0.0 && pasoFaseActual < pasoFaseObjetivo)
+                        pasoFaseActual = pasoFaseObjetivo;
                 }
             }
-            return count;
+            return cantidad;
         }
     }
 }
