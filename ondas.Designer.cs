@@ -38,6 +38,7 @@
             // 
             // pictureBox
             // 
+            pictureBox.BackColor = SystemColors.Window;
             pictureBox.Location = new Point(55, 328);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new Size(1195, 321);
@@ -50,12 +51,13 @@
             sliderVolumen.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             sliderVolumen.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             sliderVolumen.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            sliderVolumen.Location = new Point(115, 199);
+            sliderVolumen.Location = new Point(114, 181);
             sliderVolumen.MouseState = MaterialSkin.MouseState.HOVER;
             sliderVolumen.Name = "sliderVolumen";
-            sliderVolumen.Size = new Size(507, 40);
+            sliderVolumen.Size = new Size(480, 40);
             sliderVolumen.TabIndex = 1;
-            sliderVolumen.Text = "Volumen";
+            sliderVolumen.Text = "Amplitud";
+            sliderVolumen.Value = 0;
             sliderVolumen.onValueChanged += sliderVolumen_onValueChanged;
             // 
             // sliderFrecuencia
@@ -64,7 +66,7 @@
             sliderFrecuencia.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             sliderFrecuencia.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             sliderFrecuencia.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            sliderFrecuencia.Location = new Point(94, 153);
+            sliderFrecuencia.Location = new Point(94, 135);
             sliderFrecuencia.MouseState = MaterialSkin.MouseState.HOVER;
             sliderFrecuencia.Name = "sliderFrecuencia";
             sliderFrecuencia.RangeMax = 4000;
@@ -72,6 +74,7 @@
             sliderFrecuencia.TabIndex = 2;
             sliderFrecuencia.Text = "Frecuencia";
             sliderFrecuencia.Value = 1000;
+            sliderFrecuencia.ValueSuffix = " Hz";
             sliderFrecuencia.onValueChanged += sliderFrecuencia_onValueChanged;
             // 
             // btnIniciar
@@ -81,14 +84,14 @@
             btnIniciar.Depth = 0;
             btnIniciar.HighEmphasis = true;
             btnIniciar.Icon = null;
-            btnIniciar.Location = new Point(170, 260);
+            btnIniciar.Location = new Point(180, 239);
             btnIniciar.Margin = new Padding(4, 6, 4, 6);
             btnIniciar.MouseState = MaterialSkin.MouseState.HOVER;
             btnIniciar.Name = "btnIniciar";
             btnIniciar.NoAccentTextColor = Color.Empty;
-            btnIniciar.Size = new Size(158, 36);
+            btnIniciar.Size = new Size(73, 36);
             btnIniciar.TabIndex = 3;
-            btnIniciar.Text = "materialButton1";
+            btnIniciar.Text = "iniciar";
             btnIniciar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnIniciar.UseAccentColor = false;
             btnIniciar.UseVisualStyleBackColor = true;
@@ -101,17 +104,18 @@
             btnParar.Depth = 0;
             btnParar.HighEmphasis = true;
             btnParar.Icon = null;
-            btnParar.Location = new Point(379, 269);
+            btnParar.Location = new Point(285, 239);
             btnParar.Margin = new Padding(4, 6, 4, 6);
             btnParar.MouseState = MaterialSkin.MouseState.HOVER;
             btnParar.Name = "btnParar";
             btnParar.NoAccentTextColor = Color.Empty;
-            btnParar.Size = new Size(158, 36);
+            btnParar.Size = new Size(68, 36);
             btnParar.TabIndex = 4;
-            btnParar.Text = "materialButton2";
+            btnParar.Text = "parar";
             btnParar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnParar.UseAccentColor = false;
+            btnParar.UseAccentColor = true;
             btnParar.UseVisualStyleBackColor = true;
+            btnParar.Click += btnParar_Click;
             // 
             // ondas
             // 

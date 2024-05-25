@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
-using Timer = System.Windows.Forms.Timer;
 
 namespace Calculadoradevectore
 {
@@ -20,8 +19,6 @@ namespace Calculadoradevectore
         private ondaSenoidalClass ondaSenoidal = new ondaSenoidalClass(44100);
         private bool noSuena = true;
         private float time;
-        private const float timeIncrement = 0.02f;
-        private Timer timer;
 
         public ondas()
         {
@@ -38,6 +35,13 @@ namespace Calculadoradevectore
 
             onda.Frecuencia = frecuen;
             onda.Volumen = volum;
+
+            // para asegurarse no se re-inicialice durante la reproducción
+            if (waveOutF.PlaybackState == PlaybackState.Playing)
+            {
+                waveOutF.Stop();
+            }
+
             // Inicializar el dispositivo de salida de audio
             waveOutF.Init(onda);
         }
@@ -46,36 +50,36 @@ namespace Calculadoradevectore
         {
             Graphics g = pictureBox.CreateGraphics();
             g.Clear(Color.White);
-
             Pen pen = new Pen(Color.Black);
+
             int width = pictureBox.Width;
             int height = pictureBox.Height;
-            int midHeight = height / 2;
+            int medioHeight = height / 2;
 
-            float amplitude = ondaSenoidal.Volumen /** height / 2*/; // Escalar amplitud para ajustarse al gráfico
+            float amplitude = ondaSenoidal.Volumen * height / 2; // Escalar amplitud para ajustarse al gráfico
             float frequency = (float)ondaSenoidal.Frecuencia;
             float sampleRate = (float)ondaSenoidal.WaveFormat.SampleRate;
 
             PointF[] points = new PointF[width];
-            for (int x = 0; x < width; x++)
+            for (int i = 0; i < width; i++)
             {
-                float t = (time + x / sampleRate);
+                float t = i / sampleRate; // Utilizar solo la posición x para la onda estacionaria
                 float y = amplitude * (float)Math.Sin(2 * Math.PI * frequency * t);
-                points[x] = new PointF(x, midHeight - y);
+                points[i] = new PointF(i, medioHeight - y);
             }
 
             g.DrawLines(pen, points);
         }
 
-        private void sliderFrecuencia_onValueChanged(object sender, int newValue)
+        private void sliderFrecuencia_onValueChanged(object sender, int nuevoValor)
         {
-            ondaSenoidal.Frecuencia = Convert.ToInt32(sliderFrecuencia.Value);
+            ondaSenoidal.Frecuencia = nuevoValor; // Asignar directamente el nuevo valor
             DrawSineWave(pictureBox);
         }
 
-        private void sliderVolumen_onValueChanged(object sender, int newValue)
+        private void sliderVolumen_onValueChanged(object sender, int nuevoValor)
         {
-            ondaSenoidal.Volumen = Convert.ToInt32(sliderVolumen.Value);
+            ondaSenoidal.Volumen = nuevoValor / 100f; // Asignar directamente el nuevo valor y escalar
             DrawSineWave(pictureBox);
         }
 
@@ -83,12 +87,12 @@ namespace Calculadoradevectore
         {
             if (noSuena)
             {
-                generarSonido(Convert.ToInt32(sliderVolumen.Value), Convert.ToInt32(sliderFrecuencia.Value), waveOut, ondaSenoidal);
+                //time = 0; // Reiniciar el tiempo
+                generarSonido(sliderVolumen.Value, sliderFrecuencia.Value, waveOut, ondaSenoidal);
                 waveOut.Play();
+                DrawSineWave(pictureBox);
             }
             noSuena = false;
-
-            DrawSineWave(pictureBox);
         }
 
         private void btnParar_Click(object sender, EventArgs e)
@@ -96,5 +100,6 @@ namespace Calculadoradevectore
             waveOut.Stop();
             noSuena = true;
         }
+
     }
 }
