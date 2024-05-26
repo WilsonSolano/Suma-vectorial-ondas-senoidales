@@ -47,6 +47,7 @@
             // pictureBox
             // 
             pictureBox.BackColor = SystemColors.Window;
+            pictureBox.BorderStyle = BorderStyle.FixedSingle;
             pictureBox.Location = new Point(55, 328);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new Size(1195, 321);
