@@ -18,7 +18,7 @@ namespace Calculadoradevectore
         private WaveOutEvent waveOut = new WaveOutEvent();
         private ondaSenoidalClass ondaSenoidal = new ondaSenoidalClass(44100);
         private bool noSuena = true;
-        private float time;
+        private Bitmap mapaSenoidal;
 
         public ondas()
         {
@@ -27,6 +27,7 @@ namespace Calculadoradevectore
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Cyan400, Primary.Cyan200, Primary.Cyan50, Accent.Lime400, TextShade.BLACK);
             InitializeComponent();
+            mapaSenoidal = new Bitmap(pictureBox.Width, pictureBox.Height);
         }
 
         private void generarSonido(float volum, int frecuen, WaveOutEvent waveOutF, ondaSenoidalClass onda)
@@ -42,39 +43,43 @@ namespace Calculadoradevectore
                 waveOutF.Stop();
             }
 
-            // Inicializar el dispositivo de salida de audio
+            // iniciar la salida de audio
             waveOutF.Init(onda);
         }
 
         private void DrawSineWave(PictureBox pictureBox)
         {
-            Graphics g = pictureBox.CreateGraphics();
-            g.Clear(Color.White);
-            Pen pen = new Pen(Color.Black);
-
-            int width = pictureBox.Width;
-            int height = pictureBox.Height;
-            int medioHeight = height / 2;
-
-            float amplitude = ondaSenoidal.Volumen * height / 2; // Escalar amplitud para ajustarse al gráfico
-            float frequency = (float)ondaSenoidal.Frecuencia;
-            float sampleRate = (float)ondaSenoidal.WaveFormat.SampleRate;
-
-            PointF[] points = new PointF[width];
-            for (int i = 0; i < width; i++)
+            using (Graphics g = Graphics.FromImage(mapaSenoidal))
             {
-                float t = i / sampleRate; // Utilizar solo la posición x para la onda estacionaria
-                float y = amplitude * (float)Math.Sin(2 * Math.PI * frequency * t);
-                points[i] = new PointF(i, medioHeight - y);
-            }
+                g.Clear(Color.White);
+                Pen pen = new Pen(Color.Black);
 
-            g.DrawLines(pen, points);
+                int width = pictureBox.Width;
+                int height = pictureBox.Height;
+                int medioHeight = height / 2;
+
+                float amplitude = ondaSenoidal.Volumen * height / 2; // Escalar amplitud para ajustarse al gráfico
+                float frequency = (float)ondaSenoidal.Frecuencia;
+                float sampleRate = (float)ondaSenoidal.WaveFormat.SampleRate;
+
+                PointF[] points = new PointF[width];
+                for (int i = 0; i < width; i++)
+                {
+                    float t = i / sampleRate;
+                    float y = amplitude * (float)Math.Sin(2 * Math.PI * frequency * t);
+                    points[i] = new PointF(i, medioHeight - y);
+                }
+
+                g.DrawLines(pen, points);
+                pictureBox.Image = mapaSenoidal;
+            }
         }
 
         private void sliderFrecuencia_onValueChanged(object sender, int nuevoValor)
         {
             ondaSenoidal.Frecuencia = nuevoValor; // Asignar directamente el nuevo valor
             DrawSineWave(pictureBox);
+            ondaSenoidal.calcularLongitudOnda(labelFormula, labelResultado);
         }
 
         private void sliderVolumen_onValueChanged(object sender, int nuevoValor)
@@ -87,10 +92,10 @@ namespace Calculadoradevectore
         {
             if (noSuena)
             {
-                //time = 0; // Reiniciar el tiempo
                 generarSonido(sliderVolumen.Value, sliderFrecuencia.Value, waveOut, ondaSenoidal);
                 waveOut.Play();
                 DrawSineWave(pictureBox);
+                ondaSenoidal.calcularLongitudOnda(labelFormula, labelResultado);
             }
             noSuena = false;
         }
@@ -100,6 +105,5 @@ namespace Calculadoradevectore
             waveOut.Stop();
             noSuena = true;
         }
-
     }
 }

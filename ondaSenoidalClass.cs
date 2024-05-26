@@ -1,6 +1,7 @@
 ﻿using NAudio.Wave;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,6 +75,17 @@ namespace Calculadoradevectore
                 }
             }
             return cantidad;
+        }
+
+        public void calcularLongitudOnda(Label proceso, Label resultado)
+        {
+            double longitudOnda = Math.Round((343 / frecuencia), 2);
+
+            string operacion = ($"λ = 343 m/s / {frecuencia}");
+            string resultadoLongitud = $"λ = {longitudOnda} m";
+
+            proceso.Text = operacion;
+            resultado.Text = resultadoLongitud;
         }
     }
 }
