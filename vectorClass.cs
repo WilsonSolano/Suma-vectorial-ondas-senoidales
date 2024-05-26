@@ -12,15 +12,15 @@ namespace Calculadoradevectore
     internal class vectorClass
     {
         private double angulo, anguloRadiano;
-        private double magnitud, X, Y;
-        private double comY, comX;
+        private int magnitud, X, Y;
+        private int comY, comX;
         protected Graphics g;
         protected Pen p;
 
-        public double SGmagnitud { get => magnitud; set => magnitud = value; }
+        public int SGmagnitud { get => magnitud; set => magnitud = value; }
         public double SGangulo { get => angulo; set => angulo = value; }
-        public double GComY { get => comY;}
-        public double GComX { get => comX;}
+        public int GComY { get => comY;}
+        public int GComX { get => comX;}
 
         public void transformaAngulo()
         {
