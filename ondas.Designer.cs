@@ -46,7 +46,7 @@
             // 
             // pictureBox
             // 
-            pictureBox.BackColor = SystemColors.Window;
+            pictureBox.BackColor = Color.White;
             pictureBox.BorderStyle = BorderStyle.FixedSingle;
             pictureBox.Location = new Point(55, 328);
             pictureBox.Name = "pictureBox";
@@ -213,7 +213,7 @@
             groupBox1.Size = new Size(628, 201);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBox1.Text = "Parametros";
             // 
             // ondas
             // 
