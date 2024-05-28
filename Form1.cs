@@ -8,8 +8,7 @@ namespace Calculadoradevectore
 {
     public partial class Form1 : MaterialSkin.Controls.MaterialForm
     {
-        //Graphics g, h;
-        //Pen p, q;
+        int numVector = 0;
         bool existe = false;
         bool menorA85 = false;
         List<vectorClass> Vectores = new List<vectorClass>();
@@ -59,7 +58,8 @@ namespace Calculadoradevectore
                 vector.transformaAngulo();
                 vector.calcularCoordenadas();
                 vector.CalcularComponente();
-                vector.DibujarVector(plano, mapavectores);
+                vector.DibujarVector(plano, mapavectores, numVector);
+                numVector = numVector == 10 ? 0 : numVector + 1;
 
                 Vectores.Add(vector);
 
@@ -83,7 +83,7 @@ namespace Calculadoradevectore
                 newVector.calcularModulo();
                 newVector.calcularDireccion();
                 newVector.calcularCoordenadas();
-                newVector.DibujarVector(planoResul, vectorResultanteMapa);
+                newVector.DibujarVector(planoResul, vectorResultanteMapa, numVector);
 
                 foreach (var vector in Vectores)
                 {
@@ -181,7 +181,7 @@ namespace Calculadoradevectore
 
         private void verVector_Click(object sender, EventArgs e)
         {
-            newVector.DibujarVector(planoResul, vectorResultanteMapa);
+            newVector.DibujarVector(planoResul, vectorResultanteMapa, numVector);
         }
 
         private void nuevaSuma_Click(object sender, EventArgs e)
@@ -195,6 +195,7 @@ namespace Calculadoradevectore
             gg.Clear(Color.Transparent);
             Vectores.Clear();
             comboFuerzasCompo.Items.Clear();
+            pestañas.SelectTab("tabSuma");
         }
     }
 }

@@ -24,13 +24,12 @@ namespace Calculadoradevectore
             tablaOnda = new float[tasaMuestreo];
             for (int indice = 0; indice < tasaMuestreo; ++indice)
                 tablaOnda[indice] = (float)Math.Sin(2 * Math.PI * (double)indice / tasaMuestreo);
-            // Para diente de sierra en lugar de seno: tablaOnda[indice] = (float)indice / tasaMuestreo;
             Frecuencia = 1000f;
             Volumen = 0.25f;
-            TiempoPortamento = 0.5; // se pensaba que esto era en segundos, pero el deslizamiento parece tomar un poco más
+            TiempoCambio = 0.5;
         }
 
-        public double TiempoPortamento { get; set; }
+        public double TiempoCambio { get; set; }
 
         public double Frecuencia
         {
@@ -54,7 +53,7 @@ namespace Calculadoradevectore
             if (buscarFrecuencia) // procesa el cambio de frecuencia solo una vez por llamada a Leer
             {
                 pasoFaseObjetivo = tablaOnda.Length * (frecuencia / WaveFormat.SampleRate);
-                deltaPasoFase = (pasoFaseObjetivo - pasoFaseActual) / (WaveFormat.SampleRate * TiempoPortamento);
+                deltaPasoFase = (pasoFaseObjetivo - pasoFaseActual) / (WaveFormat.SampleRate * TiempoCambio);
                 buscarFrecuencia = false;
             }
             var vol = Volumen; // procesa el cambio de volumen solo una vez por llamada a Leer

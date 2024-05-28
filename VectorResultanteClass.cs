@@ -24,7 +24,7 @@ namespace Calculadoradevectore
         {
             var query = from X in componentesX select X.GComX;
 
-            sumComponenteX = query.Sum();
+            sumComponenteX = Math.Round(query.Sum(), 2);
             return sumComponenteX;
         }
 
@@ -32,19 +32,19 @@ namespace Calculadoradevectore
         {
             var query = from Y in componentesY select Y.GComY;
 
-            sumComponenteY = query.Sum();
+            sumComponenteY = Math.Round((query.Sum()), 2);
             return sumComponenteY;
         }
 
         public void calcularModulo()
         {
-            modulo = Math.Sqrt((Math.Pow(sumComponenteX, 2) + Math.Pow(sumComponenteY, 2)));
+            modulo = Math.Round((Math.Sqrt((Math.Pow(sumComponenteX, 2) + Math.Pow(sumComponenteY, 2)))), 2);
         }
 
         public void calcularDireccion()
         {
             direccionRadianes = Math.Abs(Math.Atan((sumComponenteY / sumComponenteX)));
-            direccionGrados = (direccionRadianes * 180) / Math.PI;
+            direccionGrados = Math.Round(((direccionRadianes * 180) / Math.PI), 2);
             direccionRadianes = (direccionRadianes * -1);
         }
 
@@ -54,7 +54,7 @@ namespace Calculadoradevectore
             Y = Convert.ToInt32(modulo * Math.Sin(direccionRadianes));
         }
 
-        public override void DibujarVector(PictureBox plano, Bitmap mapaVector)
+        public override void DibujarVector(PictureBox plano, Bitmap mapaVector, int NumeroColor)
         {
 
             using (Graphics g = Graphics.FromImage(mapaVector))
@@ -70,7 +70,7 @@ namespace Calculadoradevectore
 
             using (Graphics g = Graphics.FromImage(mapaVector))
             {
-                float escala = 0.4f;
+                float escala = modulo > 600 && modulo > 1000 ? 0.2f : 0.4f ;
 
                 using (Pen p = new Pen(Color.Aqua, 4))
                 {

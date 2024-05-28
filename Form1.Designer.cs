@@ -40,7 +40,7 @@
             label4 = new Label();
             label5 = new Label();
             pestañas = new MaterialSkin.Controls.MaterialTabControl();
-            tabPage1 = new TabPage();
+            tabSuma = new TabPage();
             panel1 = new Panel();
             label6 = new Label();
             LViewVectoresAgregados = new MaterialSkin.Controls.MaterialListView();
@@ -80,7 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)plano).BeginInit();
             groupBox1.SuspendLayout();
             pestañas.SuspendLayout();
-            tabPage1.SuspendLayout();
+            tabSuma.SuspendLayout();
             panel1.SuspendLayout();
             panelPlano.SuspendLayout();
             tabResultados.SuspendLayout();
@@ -245,7 +245,7 @@
             // 
             // pestañas
             // 
-            pestañas.Controls.Add(tabPage1);
+            pestañas.Controls.Add(tabSuma);
             pestañas.Controls.Add(tabResultados);
             pestañas.Depth = 0;
             pestañas.Location = new Point(-2, 110);
@@ -256,20 +256,20 @@
             pestañas.Size = new Size(1334, 573);
             pestañas.TabIndex = 5;
             // 
-            // tabPage1
+            // tabSuma
             // 
-            tabPage1.Controls.Add(panel1);
-            tabPage1.Controls.Add(panelPlano);
-            tabPage1.Controls.Add(groupBox1);
-            tabPage1.Controls.Add(label5);
-            tabPage1.Controls.Add(label4);
-            tabPage1.Location = new Point(4, 28);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1326, 541);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Suma Vectorial";
-            tabPage1.UseVisualStyleBackColor = true;
+            tabSuma.Controls.Add(panel1);
+            tabSuma.Controls.Add(panelPlano);
+            tabSuma.Controls.Add(groupBox1);
+            tabSuma.Controls.Add(label5);
+            tabSuma.Controls.Add(label4);
+            tabSuma.Location = new Point(4, 28);
+            tabSuma.Name = "tabSuma";
+            tabSuma.Padding = new Padding(3);
+            tabSuma.Size = new Size(1326, 541);
+            tabSuma.TabIndex = 0;
+            tabSuma.Text = "Suma Vectorial";
+            tabSuma.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -350,10 +350,10 @@
             // panelCubrir
             // 
             panelCubrir.Controls.Add(materialLabel2);
-            panelCubrir.Location = new Point(-4, 0);
+            panelCubrir.Location = new Point(-2, 0);
             panelCubrir.Name = "panelCubrir";
             panelCubrir.Size = new Size(1330, 541);
-            panelCubrir.TabIndex = 15;
+            panelCubrir.TabIndex = 16;
             // 
             // materialLabel2
             // 
@@ -393,7 +393,7 @@
             nuevaSuma.Depth = 0;
             nuevaSuma.HighEmphasis = true;
             nuevaSuma.Icon = null;
-            nuevaSuma.Location = new Point(272, 170);
+            nuevaSuma.Location = new Point(255, 170);
             nuevaSuma.Margin = new Padding(4, 6, 4, 6);
             nuevaSuma.MouseState = MaterialSkin.MouseState.HOVER;
             nuevaSuma.Name = "nuevaSuma";
@@ -459,7 +459,7 @@
             verVector.Depth = 0;
             verVector.HighEmphasis = true;
             verVector.Icon = null;
-            verVector.Location = new Point(38, 170);
+            verVector.Location = new Point(107, 170);
             verVector.Margin = new Padding(4, 6, 4, 6);
             verVector.MouseState = MaterialSkin.MouseState.HOVER;
             verVector.Name = "verVector";
@@ -773,8 +773,8 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             pestañas.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            tabSuma.ResumeLayout(false);
+            tabSuma.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelPlano.ResumeLayout(false);
@@ -808,7 +808,7 @@
         private MaterialSkin.Controls.MaterialTextBox angulo;
         private MaterialSkin.Controls.MaterialButton btnSumar;
         private MaterialSkin.Controls.MaterialTabControl pestañas;
-        private TabPage tabPage1;
+        private TabPage tabSuma;
         private TabPage tabResultados;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private Label label1;
@@ -844,8 +844,8 @@
         private MaterialSkin.Controls.MaterialButton verVector;
         private MaterialSkin.Controls.MaterialLabel moduloResultante;
         private MaterialSkin.Controls.MaterialLabel direccionResultante;
+        private MaterialSkin.Controls.MaterialButton nuevaSuma;
         private Panel panelCubrir;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialButton nuevaSuma;
     }
 }
