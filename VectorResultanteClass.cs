@@ -43,10 +43,30 @@ namespace Calculadoradevectore
 
         public void calcularDireccion()
         {
-            direccionRadianes = Math.Abs(Math.Atan((sumComponenteY / sumComponenteX)));
+            //direccionRadianes = Math.Abs(Math.Atan((sumComponenteY / sumComponenteX)));
+            direccionRadianes = Math.Atan2(sumComponenteY * -1, sumComponenteX);
             direccionGrados = Math.Round(((direccionRadianes * 180) / Math.PI), 2);
             direccionRadianes = (direccionRadianes * -1);
+
+            if (direccionGrados < 0)
+            {
+                direccionGrados += 360;
+            }
         }
+
+        //public void analisisCuadrante()
+        //{
+        //    if (sumComponenteX <= 0 && sumComponenteY >= 0) //cuadrante 2 + +
+        //    {
+        //        direccionGrados = direccionGrados + 90;
+        //        direccionRadianes = direccionRadianes + ((90 * Math.PI) / 180);
+        //    }
+        //    else if (sumComponenteX <= 0 && sumComponenteY <= 0) //cuadrante 3 - -
+        //    {
+        //        direccionGrados = direccionGrados + 180;
+        //        direccionRadianes = direccionRadianes + ((180 * Math.PI) / 180);
+        //    }
+        //}
 
         public override void calcularCoordenadas()
         {

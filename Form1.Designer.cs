@@ -172,7 +172,7 @@
             btnAna1.Depth = 0;
             btnAna1.HighEmphasis = true;
             btnAna1.Icon = null;
-            btnAna1.Location = new Point(120, 180);
+            btnAna1.Location = new Point(130, 180);
             btnAna1.Margin = new Padding(4, 6, 4, 6);
             btnAna1.MouseState = MaterialSkin.MouseState.HOVER;
             btnAna1.Name = "btnAna1";
@@ -192,7 +192,7 @@
             btnSumar.Depth = 0;
             btnSumar.HighEmphasis = true;
             btnSumar.Icon = null;
-            btnSumar.Location = new Point(255, 180);
+            btnSumar.Location = new Point(244, 180);
             btnSumar.Margin = new Padding(4, 6, 4, 6);
             btnSumar.MouseState = MaterialSkin.MouseState.HOVER;
             btnSumar.Name = "btnSumar";
@@ -654,7 +654,6 @@
             materialExpansionPanel2.TabIndex = 2;
             materialExpansionPanel2.Title = "Calcular Componentes";
             materialExpansionPanel2.ValidationButtonText = "";
-            materialExpansionPanel2.Paint += materialExpansionPanel2_Paint;
             // 
             // ComponenteYresul
             // 

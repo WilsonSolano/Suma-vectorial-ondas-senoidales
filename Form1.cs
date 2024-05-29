@@ -28,9 +28,6 @@ namespace Calculadoradevectore
 
             datosNuevoVector.SendToBack();
         }
-
-        PictureBox org;
-
         private void btnAna1_Click(object sender, EventArgs e)
         {
             if (!existe)
@@ -82,6 +79,7 @@ namespace Calculadoradevectore
                 newVector.componenteY(Vectores);
                 newVector.calcularModulo();
                 newVector.calcularDireccion();
+                //newVector.analisisCuadrante();
                 newVector.calcularCoordenadas();
                 newVector.DibujarVector(planoResul, vectorResultanteMapa, numVector);
 
@@ -174,11 +172,6 @@ namespace Calculadoradevectore
             Vectores[comboFuerzasCompo.SelectedIndex].DibujarVectorPartes(planoResul, vectorResultanteMapa);
         }
 
-        private void materialExpansionPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void verVector_Click(object sender, EventArgs e)
         {
             newVector.DibujarVector(planoResul, vectorResultanteMapa, numVector);
@@ -196,6 +189,8 @@ namespace Calculadoradevectore
             Vectores.Clear();
             comboFuerzasCompo.Items.Clear();
             pestañas.SelectTab("tabSuma");
+            existe = false;
+            numVector = 0;
         }
     }
 }

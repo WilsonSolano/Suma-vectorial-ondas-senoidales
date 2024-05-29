@@ -84,9 +84,12 @@ namespace Calculadoradevectore
         {
             using (Graphics g = Graphics.FromImage(mapaVector))
             {
-                //float escala = 0.4f;
-                float escala = magnitud > 600 && magnitud > 1000 ? 0.2f : 0.4f;
-                escala = magnitud > 600 && magnitud > 1000 ? 0.2f : 0.4f;
+                //float escala = 0.4f; // 151 a 625
+                //float escala = 0.2f; // 625 a 1250
+                float escala = 2f; // 1 a 150
+
+                //float escala = magnitud > 600 && magnitud > 1000 ? 0.2f : 0.4f;
+                //escala = magnitud > 600 && magnitud > 1000 ? 0.2f : 0.4f;
 
 
                 using (lapices[numVectorColor])
