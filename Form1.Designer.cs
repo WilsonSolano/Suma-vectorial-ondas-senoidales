@@ -48,12 +48,17 @@
             columnHeader4 = new ColumnHeader();
             panelPlano = new Panel();
             tabResultados = new TabPage();
-            panelCubrir = new Panel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             datosNuevoVector = new GroupBox();
             nuevaSuma = new MaterialSkin.Controls.MaterialButton();
             moduloResultante = new MaterialSkin.Controls.MaterialLabel();
+            sentidoResultante = new MaterialSkin.Controls.MaterialLabel();
             direccionResultante = new MaterialSkin.Controls.MaterialLabel();
+            label8 = new Label();
             label7 = new Label();
             label9 = new Label();
             verVector = new MaterialSkin.Controls.MaterialButton();
@@ -77,6 +82,7 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             comboFuerzasCompo = new MaterialSkin.Controls.MaterialComboBox();
             materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            panelCubrir = new Panel();
             ((System.ComponentModel.ISupportInitialize)plano).BeginInit();
             groupBox1.SuspendLayout();
             pestañas.SuspendLayout();
@@ -84,13 +90,13 @@
             panel1.SuspendLayout();
             panelPlano.SuspendLayout();
             tabResultados.SuspendLayout();
-            panelCubrir.SuspendLayout();
             datosNuevoVector.SuspendLayout();
             materialExpansionPanel7.SuspendLayout();
             materialExpansionPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)planoResul).BeginInit();
             materialExpansionPanel3.SuspendLayout();
             materialExpansionPanel2.SuspendLayout();
+            panelCubrir.SuspendLayout();
             SuspendLayout();
             // 
             // plano
@@ -333,6 +339,10 @@
             // tabResultados
             // 
             tabResultados.Controls.Add(panelCubrir);
+            tabResultados.Controls.Add(materialLabel6);
+            tabResultados.Controls.Add(materialLabel5);
+            tabResultados.Controls.Add(materialLabel4);
+            tabResultados.Controls.Add(materialLabel3);
             tabResultados.Controls.Add(datosNuevoVector);
             tabResultados.Controls.Add(materialExpansionPanel7);
             tabResultados.Controls.Add(materialExpansionPanel6);
@@ -347,14 +357,6 @@
             tabResultados.Text = "Resultados";
             tabResultados.UseVisualStyleBackColor = true;
             // 
-            // panelCubrir
-            // 
-            panelCubrir.Controls.Add(materialLabel2);
-            panelCubrir.Location = new Point(-2, 0);
-            panelCubrir.Name = "panelCubrir";
-            panelCubrir.Size = new Size(1330, 541);
-            panelCubrir.TabIndex = 16;
-            // 
             // materialLabel2
             // 
             materialLabel2.AutoSize = true;
@@ -362,19 +364,69 @@
             materialLabel2.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
             materialLabel2.HighEmphasis = true;
-            materialLabel2.Location = new Point(442, 242);
+            materialLabel2.Location = new Point(461, 223);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(427, 29);
             materialLabel2.TabIndex = 0;
             materialLabel2.Text = "Para mostrar resultados, click en Sumar";
             // 
+            // materialLabel6
+            // 
+            materialLabel6.AutoSize = true;
+            materialLabel6.Depth = 0;
+            materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel6.Location = new Point(1250, 263);
+            materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel6.Name = "materialLabel6";
+            materialLabel6.Size = new Size(10, 19);
+            materialLabel6.TabIndex = 17;
+            materialLabel6.Text = "E";
+            // 
+            // materialLabel5
+            // 
+            materialLabel5.AutoSize = true;
+            materialLabel5.Depth = 0;
+            materialLabel5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel5.Location = new Point(990, 524);
+            materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel5.Name = "materialLabel5";
+            materialLabel5.Size = new Size(11, 19);
+            materialLabel5.TabIndex = 17;
+            materialLabel5.Text = "S";
+            // 
+            // materialLabel4
+            // 
+            materialLabel4.AutoSize = true;
+            materialLabel4.Depth = 0;
+            materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel4.Location = new Point(726, 263);
+            materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel4.Name = "materialLabel4";
+            materialLabel4.Size = new Size(12, 19);
+            materialLabel4.TabIndex = 17;
+            materialLabel4.Text = "O";
+            // 
+            // materialLabel3
+            // 
+            materialLabel3.AutoSize = true;
+            materialLabel3.Depth = 0;
+            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel3.Location = new Point(990, 3);
+            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel3.Name = "materialLabel3";
+            materialLabel3.Size = new Size(12, 19);
+            materialLabel3.TabIndex = 17;
+            materialLabel3.Text = "N";
+            // 
             // datosNuevoVector
             // 
             datosNuevoVector.BackColor = Color.Gainsboro;
             datosNuevoVector.Controls.Add(nuevaSuma);
             datosNuevoVector.Controls.Add(moduloResultante);
+            datosNuevoVector.Controls.Add(sentidoResultante);
             datosNuevoVector.Controls.Add(direccionResultante);
+            datosNuevoVector.Controls.Add(label8);
             datosNuevoVector.Controls.Add(label7);
             datosNuevoVector.Controls.Add(label9);
             datosNuevoVector.Controls.Add(verVector);
@@ -393,7 +445,7 @@
             nuevaSuma.Depth = 0;
             nuevaSuma.HighEmphasis = true;
             nuevaSuma.Icon = null;
-            nuevaSuma.Location = new Point(255, 170);
+            nuevaSuma.Location = new Point(255, 184);
             nuevaSuma.Margin = new Padding(4, 6, 4, 6);
             nuevaSuma.MouseState = MaterialSkin.MouseState.HOVER;
             nuevaSuma.Name = "nuevaSuma";
@@ -413,12 +465,26 @@
             moduloResultante.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             moduloResultante.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             moduloResultante.HighEmphasis = true;
-            moduloResultante.Location = new Point(217, 55);
+            moduloResultante.Location = new Point(217, 44);
             moduloResultante.MouseState = MaterialSkin.MouseState.HOVER;
             moduloResultante.Name = "moduloResultante";
             moduloResultante.Size = new Size(135, 24);
             moduloResultante.TabIndex = 9;
             moduloResultante.Text = "materialLabel2";
+            // 
+            // sentidoResultante
+            // 
+            sentidoResultante.AutoSize = true;
+            sentidoResultante.Depth = 0;
+            sentidoResultante.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            sentidoResultante.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            sentidoResultante.HighEmphasis = true;
+            sentidoResultante.Location = new Point(216, 142);
+            sentidoResultante.MouseState = MaterialSkin.MouseState.HOVER;
+            sentidoResultante.Name = "sentidoResultante";
+            sentidoResultante.Size = new Size(135, 24);
+            sentidoResultante.TabIndex = 9;
+            sentidoResultante.Text = "materialLabel2";
             // 
             // direccionResultante
             // 
@@ -427,17 +493,26 @@
             direccionResultante.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             direccionResultante.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             direccionResultante.HighEmphasis = true;
-            direccionResultante.Location = new Point(217, 107);
+            direccionResultante.Location = new Point(217, 96);
             direccionResultante.MouseState = MaterialSkin.MouseState.HOVER;
             direccionResultante.Name = "direccionResultante";
             direccionResultante.Size = new Size(135, 24);
             direccionResultante.TabIndex = 9;
             direccionResultante.Text = "materialLabel2";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(39, 139);
+            label8.Name = "label8";
+            label8.Size = new Size(80, 25);
+            label8.TabIndex = 8;
+            label8.Text = "Sentido:";
+            // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(39, 104);
+            label7.Location = new Point(39, 93);
             label7.Name = "label7";
             label7.Size = new Size(96, 25);
             label7.TabIndex = 8;
@@ -446,7 +521,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(38, 54);
+            label9.Location = new Point(38, 43);
             label9.Name = "label9";
             label9.Size = new Size(87, 25);
             label9.TabIndex = 7;
@@ -459,7 +534,7 @@
             verVector.Depth = 0;
             verVector.HighEmphasis = true;
             verVector.Icon = null;
-            verVector.Location = new Point(107, 170);
+            verVector.Location = new Point(107, 184);
             verVector.Margin = new Padding(4, 6, 4, 6);
             verVector.MouseState = MaterialSkin.MouseState.HOVER;
             verVector.Name = "verVector";
@@ -574,7 +649,7 @@
             // planoResul
             // 
             planoResul.BorderStyle = BorderStyle.FixedSingle;
-            planoResul.Location = new Point(735, 2);
+            planoResul.Location = new Point(744, 23);
             planoResul.Name = "planoResul";
             planoResul.Size = new Size(500, 500);
             planoResul.TabIndex = 4;
@@ -756,6 +831,16 @@
             materialTabSelector1.Size = new Size(1334, 48);
             materialTabSelector1.TabIndex = 6;
             materialTabSelector1.Text = "materialTabSelector1";
+            materialTabSelector1.Click += materialTabSelector1_Click;
+            // 
+            // panelCubrir
+            // 
+            panelCubrir.Controls.Add(materialLabel2);
+            panelCubrir.Dock = DockStyle.Fill;
+            panelCubrir.Location = new Point(3, 3);
+            panelCubrir.Name = "panelCubrir";
+            panelCubrir.Size = new Size(1320, 535);
+            panelCubrir.TabIndex = 18;
             // 
             // Form1
             // 
@@ -778,8 +863,7 @@
             panel1.PerformLayout();
             panelPlano.ResumeLayout(false);
             tabResultados.ResumeLayout(false);
-            panelCubrir.ResumeLayout(false);
-            panelCubrir.PerformLayout();
+            tabResultados.PerformLayout();
             datosNuevoVector.ResumeLayout(false);
             datosNuevoVector.PerformLayout();
             materialExpansionPanel7.ResumeLayout(false);
@@ -791,6 +875,8 @@
             materialExpansionPanel3.PerformLayout();
             materialExpansionPanel2.ResumeLayout(false);
             materialExpansionPanel2.PerformLayout();
+            panelCubrir.ResumeLayout(false);
+            panelCubrir.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -844,7 +930,13 @@
         private MaterialSkin.Controls.MaterialLabel moduloResultante;
         private MaterialSkin.Controls.MaterialLabel direccionResultante;
         private MaterialSkin.Controls.MaterialButton nuevaSuma;
-        private Panel panelCubrir;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel sentidoResultante;
+        private Label label8;
+        private Panel panelCubrir;
     }
 }

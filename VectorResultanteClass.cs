@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace Calculadoradevectore
     {
         private double modulo;
         private int X, Y;
-        private double sumComponenteX, sumComponenteY, sentido, direccionRadianes, direccionGrados, direccionRadianesTan;
+        private double sumComponenteX, sumComponenteY, direccionRadianes, direccionGrados, direccionRadianesTan;
 
         public double GModulo { get => modulo;}
         public int GX { get => X;}
@@ -44,11 +45,11 @@ namespace Calculadoradevectore
 
         public void calcularDireccion()
         {
-            direccionRadianesTan = Math.Abs(Math.Atan((sumComponenteY / sumComponenteX)));
+            //direccionRadianesTan = Math.Abs(Math.Atan((sumComponenteY / sumComponenteX)));
 
 
             direccionRadianes = Math.Atan2(sumComponenteY * -1, sumComponenteX);
-            direccionGrados = Math.Round(((direccionRadianesTan * 180) / Math.PI), 2);
+            direccionGrados = Math.Round(((direccionRadianes * 180) / Math.PI), 2);
             direccionRadianes = (direccionRadianes * -1);
 
             if (direccionGrados < 0)
@@ -112,6 +113,30 @@ namespace Calculadoradevectore
             string resulX = $"⌀ = {Convert.ToInt32(direccionGrados)}";
             labelDireccion.Text = imprimir;
             labelModuloResul.Text = resulX;
+        }
+
+        public string sentido()
+        {
+            if (direccionGrados >= 0 && direccionGrados < 90)
+            {
+                return "Noroeste (NE)";
+            }
+            else if (direccionGrados >= 90 && direccionGrados < 180)
+            {
+                return "Noreste (NE)";
+            }
+            else if (direccionGrados >= 180 && direccionGrados < 270)
+            {
+                return "Suroeste (SE)";
+            }
+            else if (direccionGrados >= 270 && direccionGrados < 360)
+            {
+                return "Sureste (SE)";
+            }
+            else
+            {
+                return "Desconocido";
+            }
         }
     }
 }

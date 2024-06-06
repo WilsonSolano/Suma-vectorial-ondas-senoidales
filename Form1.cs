@@ -80,6 +80,7 @@ namespace Calculadoradevectore
                 newVector.calcularDireccion();
                 newVector.calcularCoordenadas();
                 newVector.DibujarVector(planoResul, vectorResultanteMapa, numVector);
+                sentidoResultante.Text = newVector.sentido();
 
                 foreach (var vector in Vectores)
                 {
@@ -189,6 +190,11 @@ namespace Calculadoradevectore
             pestañas.SelectTab("tabSuma");
             existe = false;
             numVector = 0;
+        }
+
+        private void materialTabSelector1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

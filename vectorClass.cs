@@ -19,7 +19,7 @@ namespace Calculadoradevectore
         {
             new Pen(Color.Red, 4),
             new Pen(Color.Green, 4),
-            new Pen(Color.Blue, 4),
+            new Pen(Color.Azure, 4),
             new Pen(Color.Yellow, 4),
             new Pen(Color.Orange, 4),
             new Pen(Color.Purple, 4),
@@ -32,7 +32,7 @@ namespace Calculadoradevectore
         {
             Brushes.Red,
             Brushes.Green,
-            Brushes.Blue,
+            Brushes.Azure,
             Brushes.Yellow,
             Brushes.Orange,
             Brushes.Purple,
@@ -137,6 +137,14 @@ namespace Calculadoradevectore
                     arrowPoints[1] = new PointF(((X * escala) + 250) - 25 * (float)Math.Cos(angle - Math.PI / 5), ((Y * escala) + 250) - 25 * (float)Math.Sin(angle - Math.PI / 5));
                     arrowPoints[2] = new PointF(((X * escala) + 250) - 25 * (float)Math.Cos(angle + Math.PI / 5), ((Y * escala) + 250) - 25 * (float)Math.Sin(angle + Math.PI / 5));
                     g.FillPolygon(Brushes.Red, arrowPoints);
+
+                    using (Pen componentPen = new Pen(Color.CornflowerBlue, 3))
+                    {
+                        // Componente en X
+                        g.DrawLine(componentPen, ((X * escala) + 250), ((Y * escala) + 250), ((X * escala) + 250), 250);
+                        // Componente en Y
+                        g.DrawLine(componentPen, ((X * escala) + 250), ((Y * escala) + 250), 250, ((Y * escala) + 250));
+                    }
 
                     plano.Image = mapaVector;
                 }
