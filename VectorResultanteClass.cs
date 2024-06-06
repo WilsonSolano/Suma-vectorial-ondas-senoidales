@@ -125,15 +125,15 @@ namespace Calculadoradevectore
         {
             if (direccionGrados >= 0 && direccionGrados < 90)
             {
-                return "Noroeste (NE)";
+                return "Noreste (NE)";
             }
             else if (direccionGrados >= 90 && direccionGrados < 180)
             {
-                return "Noreste (NE)";
+                return "Noroeste (NO)";
             }
             else if (direccionGrados >= 180 && direccionGrados < 270)
             {
-                return "Suroeste (SE)";
+                return "Suroeste (SO)";
             }
             else if (direccionGrados >= 270 && direccionGrados < 360)
             {
