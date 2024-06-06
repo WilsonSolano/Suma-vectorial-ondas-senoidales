@@ -10,7 +10,6 @@ namespace Calculadoradevectore
     {
         int numVector = 0;
         bool existe = false;
-        bool menorA85 = false;
         List<vectorClass> Vectores = new List<vectorClass>();
         Bitmap mapavectores = new Bitmap(500, 500);
         Bitmap vectorResultanteMapa = new Bitmap(500, 500);
@@ -79,7 +78,6 @@ namespace Calculadoradevectore
                 newVector.componenteY(Vectores);
                 newVector.calcularModulo();
                 newVector.calcularDireccion();
-                //newVector.analisisCuadrante();
                 newVector.calcularCoordenadas();
                 newVector.DibujarVector(planoResul, vectorResultanteMapa, numVector);
 

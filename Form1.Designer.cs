@@ -159,11 +159,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(26, 46);
+            label2.Location = new Point(17, 46);
             label2.Name = "label2";
-            label2.Size = new Size(88, 25);
+            label2.Size = new Size(94, 25);
             label2.TabIndex = 7;
-            label2.Text = "Cantidad";
+            label2.Text = "Magnitud";
             // 
             // btnAna1
             // 

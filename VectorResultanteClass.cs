@@ -11,7 +11,7 @@ namespace Calculadoradevectore
     {
         private double modulo;
         private int X, Y;
-        private double sumComponenteX, sumComponenteY, sentido, direccionRadianes, direccionGrados;
+        private double sumComponenteX, sumComponenteY, sentido, direccionRadianes, direccionGrados, direccionRadianesTan;
 
         public double GModulo { get => modulo;}
         public int GX { get => X;}
@@ -19,6 +19,7 @@ namespace Calculadoradevectore
         public double GSumComponenteX { get => sumComponenteX;}
         public double GSumComponenteY { get => sumComponenteY;}
         public double GDireccionGrados { get => direccionGrados;}
+        public double GSdireccionRadianesTan { get => direccionRadianesTan; set => direccionRadianesTan = value; }
 
         public double componenteX(List<vectorClass> componentesX)
         {
@@ -43,9 +44,11 @@ namespace Calculadoradevectore
 
         public void calcularDireccion()
         {
-            //direccionRadianes = Math.Abs(Math.Atan((sumComponenteY / sumComponenteX)));
+            direccionRadianesTan = Math.Abs(Math.Atan((sumComponenteY / sumComponenteX)));
+
+
             direccionRadianes = Math.Atan2(sumComponenteY * -1, sumComponenteX);
-            direccionGrados = Math.Round(((direccionRadianes * 180) / Math.PI), 2);
+            direccionGrados = Math.Round(((direccionRadianesTan * 180) / Math.PI), 2);
             direccionRadianes = (direccionRadianes * -1);
 
             if (direccionGrados < 0)
@@ -53,20 +56,6 @@ namespace Calculadoradevectore
                 direccionGrados += 360;
             }
         }
-
-        //public void analisisCuadrante()
-        //{
-        //    if (sumComponenteX <= 0 && sumComponenteY >= 0) //cuadrante 2 + +
-        //    {
-        //        direccionGrados = direccionGrados + 90;
-        //        direccionRadianes = direccionRadianes + ((90 * Math.PI) / 180);
-        //    }
-        //    else if (sumComponenteX <= 0 && sumComponenteY <= 0) //cuadrante 3 - -
-        //    {
-        //        direccionGrados = direccionGrados + 180;
-        //        direccionRadianes = direccionRadianes + ((180 * Math.PI) / 180);
-        //    }
-        //}
 
         public override void calcularCoordenadas()
         {
@@ -90,7 +79,8 @@ namespace Calculadoradevectore
 
             using (Graphics g = Graphics.FromImage(mapaVector))
             {
-                float escala = modulo > 600 && modulo > 1000 ? 0.2f : 0.4f ;
+                //float escala = modulo > 600 && modulo > 1000 ? 0.2f : 0.4f ;
+                float escala = 3f; // 625 a 1250
 
                 using (Pen p = new Pen(Color.Aqua, 4))
                 {
