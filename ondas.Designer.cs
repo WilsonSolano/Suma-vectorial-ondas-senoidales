@@ -51,9 +51,10 @@
             // 
             pictureBox.BackColor = Color.White;
             pictureBox.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox.Location = new Point(33, 417);
+            pictureBox.Location = new Point(29, 329);
+            pictureBox.Margin = new Padding(3, 2, 3, 2);
             pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(1410, 321);
+            pictureBox.Size = new Size(1234, 254);
             pictureBox.TabIndex = 0;
             pictureBox.TabStop = false;
             // 
@@ -63,10 +64,11 @@
             sliderVolumen.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             sliderVolumen.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             sliderVolumen.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            sliderVolumen.Location = new Point(69, 89);
+            sliderVolumen.Location = new Point(60, 70);
+            sliderVolumen.Margin = new Padding(3, 2, 3, 2);
             sliderVolumen.MouseState = MaterialSkin.MouseState.HOVER;
             sliderVolumen.Name = "sliderVolumen";
-            sliderVolumen.Size = new Size(480, 40);
+            sliderVolumen.Size = new Size(420, 40);
             sliderVolumen.TabIndex = 1;
             sliderVolumen.Text = "Amplitud";
             sliderVolumen.Value = 0;
@@ -78,11 +80,12 @@
             sliderFrecuencia.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             sliderFrecuencia.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             sliderFrecuencia.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            sliderFrecuencia.Location = new Point(48, 43);
+            sliderFrecuencia.Location = new Point(42, 34);
+            sliderFrecuencia.Margin = new Padding(3, 2, 3, 2);
             sliderFrecuencia.MouseState = MaterialSkin.MouseState.HOVER;
             sliderFrecuencia.Name = "sliderFrecuencia";
             sliderFrecuencia.RangeMax = 4000;
-            sliderFrecuencia.Size = new Size(538, 40);
+            sliderFrecuencia.Size = new Size(471, 40);
             sliderFrecuencia.TabIndex = 2;
             sliderFrecuencia.Text = "Frecuencia";
             sliderFrecuencia.Value = 1000;
@@ -96,8 +99,8 @@
             btnIniciar.Depth = 0;
             btnIniciar.HighEmphasis = true;
             btnIniciar.Icon = null;
-            btnIniciar.Location = new Point(134, 147);
-            btnIniciar.Margin = new Padding(5, 6, 5, 6);
+            btnIniciar.Location = new Point(117, 116);
+            btnIniciar.Margin = new Padding(4, 5, 4, 5);
             btnIniciar.MouseState = MaterialSkin.MouseState.HOVER;
             btnIniciar.Name = "btnIniciar";
             btnIniciar.NoAccentTextColor = Color.Empty;
@@ -116,8 +119,8 @@
             btnParar.Depth = 0;
             btnParar.HighEmphasis = true;
             btnParar.Icon = null;
-            btnParar.Location = new Point(239, 147);
-            btnParar.Margin = new Padding(5, 6, 5, 6);
+            btnParar.Location = new Point(209, 116);
+            btnParar.Margin = new Padding(4, 5, 4, 5);
             btnParar.MouseState = MaterialSkin.MouseState.HOVER;
             btnParar.Name = "btnParar";
             btnParar.NoAccentTextColor = Color.Empty;
@@ -135,9 +138,11 @@
             groupBox1.Controls.Add(sliderVolumen);
             groupBox1.Controls.Add(sliderFrecuencia);
             groupBox1.Controls.Add(btnIniciar);
-            groupBox1.Location = new Point(78, 109);
+            groupBox1.Location = new Point(68, 86);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(644, 214);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(564, 169);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "Parametros";
@@ -155,15 +160,15 @@
             materialExpansionPanel1.Controls.Add(materialLabel1);
             materialExpansionPanel1.Depth = 0;
             materialExpansionPanel1.Description = "";
-            materialExpansionPanel1.ExpandHeight = 278;
+            materialExpansionPanel1.ExpandHeight = 219;
             materialExpansionPanel1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialExpansionPanel1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialExpansionPanel1.Location = new Point(754, 119);
-            materialExpansionPanel1.Margin = new Padding(3, 16, 3, 16);
+            materialExpansionPanel1.Location = new Point(660, 94);
+            materialExpansionPanel1.Margin = new Padding(16);
             materialExpansionPanel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialExpansionPanel1.Name = "materialExpansionPanel1";
-            materialExpansionPanel1.Padding = new Padding(24, 65, 24, 16);
-            materialExpansionPanel1.Size = new Size(600, 278);
+            materialExpansionPanel1.Padding = new Padding(21, 51, 21, 13);
+            materialExpansionPanel1.Size = new Size(525, 219);
             materialExpansionPanel1.TabIndex = 8;
             materialExpansionPanel1.Title = "Longitud de onda";
             materialExpansionPanel1.ValidationButtonText = "";
@@ -174,7 +179,7 @@
             materialLabel5.Depth = 0;
             materialLabel5.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            materialLabel5.Location = new Point(111, 163);
+            materialLabel5.Location = new Point(97, 129);
             materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel5.Name = "materialLabel5";
             materialLabel5.Size = new Size(90, 24);
@@ -187,7 +192,7 @@
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            materialLabel2.Location = new Point(111, 66);
+            materialLabel2.Location = new Point(97, 52);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(74, 24);
@@ -200,7 +205,7 @@
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            materialLabel4.Location = new Point(223, 66);
+            materialLabel4.Location = new Point(195, 52);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(68, 24);
@@ -213,7 +218,7 @@
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            materialLabel3.Location = new Point(111, 117);
+            materialLabel3.Location = new Point(97, 92);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(74, 24);
@@ -226,7 +231,7 @@
             labelResultado.Depth = 0;
             labelResultado.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             labelResultado.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            labelResultado.Location = new Point(223, 163);
+            labelResultado.Location = new Point(195, 129);
             labelResultado.MouseState = MaterialSkin.MouseState.HOVER;
             labelResultado.Name = "labelResultado";
             labelResultado.Size = new Size(1, 0);
@@ -238,7 +243,7 @@
             labelFormula.Depth = 0;
             labelFormula.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             labelFormula.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            labelFormula.Location = new Point(223, 117);
+            labelFormula.Location = new Point(195, 92);
             labelFormula.MouseState = MaterialSkin.MouseState.HOVER;
             labelFormula.Name = "labelFormula";
             labelFormula.Size = new Size(1, 0);
@@ -250,7 +255,7 @@
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel1.HighEmphasis = true;
-            materialLabel1.Location = new Point(27, 236);
+            materialLabel1.Location = new Point(24, 186);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(364, 19);
@@ -260,14 +265,15 @@
             // 
             // ondas
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1449, 792);
+            ClientSize = new Size(1213, 622);
             Controls.Add(materialExpansionPanel1);
             Controls.Add(groupBox1);
             Controls.Add(pictureBox);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ondas";
-            Padding = new Padding(3, 65, 3, 3);
+            Padding = new Padding(3, 51, 3, 2);
             Text = "ondas";
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             groupBox1.ResumeLayout(false);

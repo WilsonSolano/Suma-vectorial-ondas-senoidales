@@ -53,12 +53,12 @@
             materialButton1.Depth = 0;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = Properties.Resources.simboloVector;
-            materialButton1.Location = new Point(54, 197);
-            materialButton1.Margin = new Padding(4, 6, 4, 6);
+            materialButton1.Location = new Point(47, 156);
+            materialButton1.Margin = new Padding(4, 5, 4, 5);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
             materialButton1.NoAccentTextColor = Color.Empty;
-            materialButton1.Size = new Size(175, 52);
+            materialButton1.Size = new Size(153, 41);
             materialButton1.TabIndex = 0;
             materialButton1.Text = "Suma Vectorial";
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -70,19 +70,22 @@
             // 
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(materialButton1);
-            groupBox1.Location = new Point(168, 245);
+            groupBox1.Location = new Point(147, 193);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(302, 283);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(264, 223);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Vectores";
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.contabilidad;
-            pictureBox1.Location = new Point(66, 34);
+            pictureBox1.Image = Properties.Resources.simboloVector;
+            pictureBox1.Location = new Point(58, 27);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(152, 154);
+            pictureBox1.Size = new Size(133, 122);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -91,19 +94,22 @@
             // 
             groupBox2.Controls.Add(pictureBox2);
             groupBox2.Controls.Add(materialButton2);
-            groupBox2.Location = new Point(549, 245);
+            groupBox2.Location = new Point(480, 193);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(302, 283);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(264, 223);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Onda";
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.ondas_de_radio__1_;
-            pictureBox2.Location = new Point(85, 39);
+            pictureBox2.Image = Properties.Resources.ondas_de_radio;
+            pictureBox2.Location = new Point(74, 31);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(152, 154);
+            pictureBox2.Size = new Size(133, 122);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -116,12 +122,12 @@
             materialButton2.Depth = 0;
             materialButton2.HighEmphasis = true;
             materialButton2.Icon = Properties.Resources.ondas_de_radio;
-            materialButton2.Location = new Point(65, 197);
-            materialButton2.Margin = new Padding(4, 6, 4, 6);
+            materialButton2.Location = new Point(57, 156);
+            materialButton2.Margin = new Padding(4, 5, 4, 5);
             materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton2.Name = "materialButton2";
             materialButton2.NoAccentTextColor = Color.Empty;
-            materialButton2.Size = new Size(188, 52);
+            materialButton2.Size = new Size(164, 41);
             materialButton2.TabIndex = 0;
             materialButton2.Text = "Onda Senoidal";
             materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -134,10 +140,10 @@
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 34F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            materialLabel1.Location = new Point(360, 89);
+            materialLabel1.Location = new Point(315, 70);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(499, 81);
+            materialLabel1.Size = new Size(437, 64);
             materialLabel1.TabIndex = 2;
             materialLabel1.Text = "DESCRIPCIÓN DE FENÓMENOS FÍSICOS\r\n";
             materialLabel1.UseAccent = true;
@@ -149,7 +155,7 @@
             materialLabel2.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
             materialLabel2.HighEmphasis = true;
-            materialLabel2.Location = new Point(489, 194);
+            materialLabel2.Location = new Point(428, 153);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(218, 29);
@@ -159,9 +165,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Logo55Web_1700x3791;
-            pictureBox3.Location = new Point(102, 89);
+            pictureBox3.Location = new Point(89, 70);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(206, 144);
+            pictureBox3.Size = new Size(180, 114);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
@@ -170,9 +177,9 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.LinkColor = Color.Red;
-            linkLabel1.Location = new Point(482, 536);
+            linkLabel1.Location = new Point(422, 423);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(60, 19);
+            linkLabel1.Size = new Size(51, 15);
             linkLabel1.TabIndex = 5;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Creditos";
@@ -180,16 +187,18 @@
             // 
             // Menu
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(984, 586);
+            ClientSize = new Size(861, 463);
             Controls.Add(linkLabel1);
             Controls.Add(pictureBox3);
             Controls.Add(materialLabel2);
             Controls.Add(materialLabel1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Menu";
+            Padding = new Padding(3, 51, 3, 2);
             Text = "Menu";
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

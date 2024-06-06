@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,11 +10,13 @@ using System.Threading.Tasks;
 
 namespace Calculadoradevectore
 {
-    internal class VectorResultanteClass : vectorClass
+    public class VectorResultanteClass : vectorClass
     {
         private double modulo;
         private int X, Y;
         private double sumComponenteX, sumComponenteY, direccionRadianes, direccionGrados, direccionRadianesTan;
+        private List<vectorClass> listaVectores = new List<vectorClass>();
+        private OrderedDictionary diccionarioPreguntas = new OrderedDictionary();
 
         public double GModulo { get => modulo;}
         public int GX { get => X;}
@@ -35,6 +39,8 @@ namespace Calculadoradevectore
             var query = from Y in componentesY select Y.GComY;
 
             sumComponenteY = Math.Round((query.Sum()), 2);
+
+            this.listaVectores = componentesY;
             return sumComponenteY;
         }
 
@@ -119,15 +125,15 @@ namespace Calculadoradevectore
         {
             if (direccionGrados >= 0 && direccionGrados < 90)
             {
-                return "Noroeste (NE)";
+                return "Noreste (NE)";
             }
             else if (direccionGrados >= 90 && direccionGrados < 180)
             {
-                return "Noreste (NE)";
+                return "Noroeste (NO)";
             }
             else if (direccionGrados >= 180 && direccionGrados < 270)
             {
-                return "Suroeste (SE)";
+                return "Suroeste (SO)";
             }
             else if (direccionGrados >= 270 && direccionGrados < 360)
             {
@@ -136,6 +142,21 @@ namespace Calculadoradevectore
             else
             {
                 return "Desconocido";
+            }
+        }
+
+        public OrderedDictionary llenarDiccionarioPreguntas()
+        {
+            int indice = new Random().Next(0,listaVectores.Count);
+            diccionarioPreguntas.Add($"¿Para el vector {listaVectores[indice].SGmagnitud}, calcule la componente en X?", listaVectores[indice].GComX);
+            return new OrderedDictionary();
+        }
+
+        public void imprimirPreguntas(Label labelPreguntas)
+        {
+            foreach (DictionaryEntry item in diccionarioPreguntas)
+            {
+                labelPreguntas.Text = item.Key.ToString();
             }
         }
     }
