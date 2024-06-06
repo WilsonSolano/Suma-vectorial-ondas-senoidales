@@ -10,7 +10,7 @@ using static System.Windows.Forms.AxHost;
 
 namespace Calculadoradevectore
 {
-    internal class vectorClass
+    public class vectorClass
     {
         private double angulo, anguloRadiano;
         private int magnitud, X, Y;

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Calculadoradevectore
 {
-    internal class VectorResultanteClass : vectorClass
+    public class VectorResultanteClass : vectorClass
     {
         private double modulo;
         private int X, Y;
@@ -148,8 +148,16 @@ namespace Calculadoradevectore
         public OrderedDictionary llenarDiccionarioPreguntas()
         {
             int indice = new Random().Next(0,listaVectores.Count);
-            diccionarioPreguntas.Add($"¿Para el vector {listaVectores[indice]}, calcule la componente en X?", listaVectores[indice].GComX);
+            diccionarioPreguntas.Add($"¿Para el vector {listaVectores[indice].SGmagnitud}, calcule la componente en X?", listaVectores[indice].GComX);
             return new OrderedDictionary();
+        }
+
+        public void imprimirPreguntas(Label labelPreguntas)
+        {
+            foreach (DictionaryEntry item in diccionarioPreguntas)
+            {
+                labelPreguntas.Text = item.Key.ToString();
+            }
         }
     }
 }

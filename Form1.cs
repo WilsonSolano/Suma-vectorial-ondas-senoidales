@@ -110,6 +110,10 @@ namespace Calculadoradevectore
             {
                 MessageBox.Show("Agregue los Vectores a sumar", "DATOS VACIOS", MessageBoxButtons.OK);
             }
+
+            actividadInteractiva actividad = new actividadInteractiva(newVector);
+
+            actividad.Show();
         }
 
         public void listaVectoresAgregados(int magnitud, double angulo)
