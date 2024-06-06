@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -13,6 +15,8 @@ namespace Calculadoradevectore
         private double modulo;
         private int X, Y;
         private double sumComponenteX, sumComponenteY, direccionRadianes, direccionGrados, direccionRadianesTan;
+        private List<vectorClass> listaVectores = new List<vectorClass>();
+        private OrderedDictionary diccionarioPreguntas = new OrderedDictionary();
 
         public double GModulo { get => modulo;}
         public int GX { get => X;}
@@ -35,6 +39,8 @@ namespace Calculadoradevectore
             var query = from Y in componentesY select Y.GComY;
 
             sumComponenteY = Math.Round((query.Sum()), 2);
+
+            this.listaVectores = componentesY;
             return sumComponenteY;
         }
 
@@ -137,6 +143,13 @@ namespace Calculadoradevectore
             {
                 return "Desconocido";
             }
+        }
+
+        public OrderedDictionary llenarDiccionarioPreguntas()
+        {
+            int indice = new Random().Next(0,listaVectores.Count);
+            diccionarioPreguntas.Add($"¿Para el vector {listaVectores[indice]}, calcule la componente en X?", listaVectores[indice].GComX);
+            return new OrderedDictionary();
         }
     }
 }
