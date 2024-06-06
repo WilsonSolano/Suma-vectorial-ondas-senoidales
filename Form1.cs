@@ -1,4 +1,6 @@
 using System.Numerics;
+using System.Collections;
+using System.Collections.Specialized;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -191,6 +193,14 @@ namespace Calculadoradevectore
             existe = false;
             numVector = 0;
         }
+
+        public void actividad()
+        {
+            OrderedDictionary preguntas = new OrderedDictionary();
+
+            preguntas.Add("",);
+        }
+
 
         private void materialTabSelector1_Click(object sender, EventArgs e)
         {
