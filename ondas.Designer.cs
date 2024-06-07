@@ -49,6 +49,7 @@
             label4 = new Label();
             label3 = new Label();
             btnRespuesta = new MaterialSkin.Controls.MaterialButton();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             groupBox1.SuspendLayout();
             materialExpansionPanel1.SuspendLayout();
@@ -295,6 +296,7 @@
             // 
             materialExpansionPanel2.BackColor = Color.FromArgb(255, 255, 255);
             materialExpansionPanel2.CancelButtonText = "CERRAR";
+            materialExpansionPanel2.Controls.Add(label5);
             materialExpansionPanel2.Controls.Add(txtrespuesta1);
             materialExpansionPanel2.Controls.Add(label4);
             materialExpansionPanel2.Controls.Add(label3);
@@ -361,6 +363,16 @@
             btnRespuesta.UseVisualStyleBackColor = true;
             btnRespuesta.Click += btnRespuesta_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(123, 134);
+            label5.Name = "label5";
+            label5.RightToLeft = RightToLeft.No;
+            label5.Size = new Size(279, 51);
+            label5.TabIndex = 6;
+            label5.Text = "¿Cual es el tono que emite un rayo al caer \r\ncon una frecuencia de 400Hz\r\ncon una aplitud de 50?";
+            // 
             // ondas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -410,5 +422,6 @@
         private Label label3;
         private Label label4;
         private TextBox txtrespuesta1;
+        private Label label5;
     }
 }
