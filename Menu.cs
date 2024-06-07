@@ -40,8 +40,13 @@ namespace Calculadoradevectore
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+        }
+
+        private void materialButton3_Click(object sender, EventArgs e)
+        {
             Creditos creditos = new Creditos();
             creditos.Show();
+
         }
     }
 }

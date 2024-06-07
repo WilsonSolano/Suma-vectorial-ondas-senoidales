@@ -40,6 +40,8 @@
             columnHeader2 = new ColumnHeader();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // materialLabel1
@@ -48,7 +50,7 @@
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto Light", 60F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H2;
-            materialLabel1.Location = new Point(351, 72);
+            materialLabel1.Location = new Point(307, 57);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(354, 72);
@@ -66,13 +68,14 @@
             materialListView1.FullRowSelect = true;
             listViewItem1.ToolTipText = "Kennedy";
             materialListView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2, listViewItem3, listViewItem4, listViewItem5, listViewItem6 });
-            materialListView1.Location = new Point(377, 182);
-            materialListView1.MinimumSize = new Size(200, 100);
+            materialListView1.Location = new Point(330, 144);
+            materialListView1.Margin = new Padding(3, 2, 3, 2);
+            materialListView1.MinimumSize = new Size(175, 79);
             materialListView1.MouseLocation = new Point(-1, -1);
             materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             materialListView1.Name = "materialListView1";
             materialListView1.OwnerDraw = true;
-            materialListView1.Size = new Size(300, 287);
+            materialListView1.Size = new Size(262, 227);
             materialListView1.TabIndex = 1;
             materialListView1.UseCompatibleStateImageBehavior = false;
             materialListView1.View = View.Details;
@@ -93,7 +96,7 @@
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            materialLabel2.Location = new Point(462, 144);
+            materialLabel2.Location = new Point(404, 114);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(122, 29);
@@ -106,25 +109,39 @@
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            materialLabel3.Location = new Point(322, 483);
+            materialLabel3.Location = new Point(282, 381);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(408, 29);
             materialLabel3.TabIndex = 3;
             materialLabel3.Text = "Desarrollo de Software - Segundo Año";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2024_06_06_at_7_45_29_PM;
+            pictureBox1.Location = new Point(47, 123);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(188, 276);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
             // Creditos
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1007, 536);
+            ClientSize = new Size(881, 423);
+            Controls.Add(pictureBox1);
             Controls.Add(materialLabel3);
             Controls.Add(materialLabel2);
             Controls.Add(materialListView1);
             Controls.Add(materialLabel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Creditos";
+            Padding = new Padding(3, 51, 3, 2);
             Text = "Creditos";
             Load += Creditos_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -137,5 +154,6 @@
         private ColumnHeader columnHeader2;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private PictureBox pictureBox1;
     }
 }
