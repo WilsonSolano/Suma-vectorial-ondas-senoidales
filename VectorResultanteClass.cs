@@ -10,13 +10,11 @@ using System.Threading.Tasks;
 
 namespace Calculadoradevectore
 {
-    public class VectorResultanteClass : vectorClass
+    public partial class VectorResultanteClass : vectorClass
     {
         private double modulo;
         private int X, Y;
         private double sumComponenteX, sumComponenteY, direccionRadianes, direccionGrados, direccionRadianesTan;
-        private List<vectorClass> listaVectores = new List<vectorClass>();
-        private OrderedDictionary diccionarioPreguntas = new OrderedDictionary();
 
         public double GModulo { get => modulo;}
         public int GX { get => X;}
@@ -40,7 +38,6 @@ namespace Calculadoradevectore
 
             sumComponenteY = Math.Round((query.Sum()), 2);
 
-            this.listaVectores = componentesY;
             return sumComponenteY;
         }
 
@@ -51,8 +48,8 @@ namespace Calculadoradevectore
 
         public void calcularDireccion()
         {
-            //direccionRadianesTan = Math.Abs(Math.Atan((sumComponenteY / sumComponenteX)));
-
+            direccionRadianesTan = Math.Abs(Math.Atan((sumComponenteY / sumComponenteX)));
+            direccionRadianesTan = Math.Round(((direccionRadianesTan * 180) / Math.PI), 2);
 
             direccionRadianes = Math.Atan2(sumComponenteY * -1, sumComponenteX);
             direccionGrados = Math.Round(((direccionRadianes * 180) / Math.PI), 2);
@@ -142,21 +139,6 @@ namespace Calculadoradevectore
             else
             {
                 return "Desconocido";
-            }
-        }
-
-        public OrderedDictionary llenarDiccionarioPreguntas()
-        {
-            int indice = new Random().Next(0,listaVectores.Count);
-            diccionarioPreguntas.Add($"¿Para el vector {listaVectores[indice].SGmagnitud}, calcule la componente en X?", listaVectores[indice].GComX);
-            return new OrderedDictionary();
-        }
-
-        public void imprimirPreguntas(Label labelPreguntas)
-        {
-            foreach (DictionaryEntry item in diccionarioPreguntas)
-            {
-                labelPreguntas.Text = item.Key.ToString();
             }
         }
     }

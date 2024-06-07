@@ -110,7 +110,7 @@ namespace Calculadoradevectore
                 MessageBox.Show("Agregue los Vectores a sumar", "DATOS VACIOS", MessageBoxButtons.OK);
             }
 
-            actividadInteractiva actividad = new actividadInteractiva(newVector);
+            actividadInteractiva actividad = new actividadInteractiva(Vectores, newVector);
 
             actividad.Show();
         }
@@ -199,7 +199,7 @@ namespace Calculadoradevectore
         {
             OrderedDictionary preguntas = new OrderedDictionary();
 
-            preguntas.Add("",);
+            preguntas.Add("",1);
         }
 
 
