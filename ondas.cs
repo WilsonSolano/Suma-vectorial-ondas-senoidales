@@ -103,5 +103,21 @@ namespace Calculadoradevectore
             waveOut.Stop();
             noSuena = true;
         }
+
+        private string respuesta1 = "agudo";
+
+        private void btnRespuesta_Click(object sender, EventArgs e)
+        {
+            string respuestausuario1 = txtrespuesta1.Text.ToLower();
+
+            if (respuestausuario1==respuesta1)
+            {
+                MessageBox.Show("¡Respuestas correctas toma una paleta!");
+            }
+            else
+            {
+                MessageBox.Show("¡Fallaste!");
+            }
+        }
     }
 }

@@ -85,6 +85,6 @@ namespace Calculadoradevectore
 
             proceso.Text = operacion;
             resultado.Text = resultadoLongitud;
-        }
-    }
+        }   
+    }   
 }

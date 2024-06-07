@@ -31,9 +31,9 @@
             pictureBox = new PictureBox();
             sliderVolumen = new MaterialSkin.Controls.MaterialSlider();
             sliderFrecuencia = new MaterialSkin.Controls.MaterialSlider();
-            btnIniciar = new MaterialSkin.Controls.MaterialButton();
             btnParar = new MaterialSkin.Controls.MaterialButton();
             groupBox1 = new GroupBox();
+            btnIniciar = new MaterialSkin.Controls.MaterialButton();
             materialExpansionPanel1 = new MaterialSkin.Controls.MaterialExpansionPanel();
             materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -42,19 +42,27 @@
             labelResultado = new MaterialSkin.Controls.MaterialLabel();
             labelFormula = new MaterialSkin.Controls.MaterialLabel();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            label1 = new Label();
+            label2 = new Label();
+            materialExpansionPanel2 = new MaterialSkin.Controls.MaterialExpansionPanel();
+            txtrespuesta1 = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            btnRespuesta = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             groupBox1.SuspendLayout();
             materialExpansionPanel1.SuspendLayout();
+            materialExpansionPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox
             // 
             pictureBox.BackColor = Color.White;
             pictureBox.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox.Location = new Point(29, 329);
+            pictureBox.Location = new Point(19, 331);
             pictureBox.Margin = new Padding(3, 2, 3, 2);
             pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(1234, 254);
+            pictureBox.Size = new Size(622, 254);
             pictureBox.TabIndex = 0;
             pictureBox.TabStop = false;
             // 
@@ -92,26 +100,6 @@
             sliderFrecuencia.ValueSuffix = " Hz";
             sliderFrecuencia.onValueChanged += sliderFrecuencia_onValueChanged;
             // 
-            // btnIniciar
-            // 
-            btnIniciar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnIniciar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnIniciar.Depth = 0;
-            btnIniciar.HighEmphasis = true;
-            btnIniciar.Icon = null;
-            btnIniciar.Location = new Point(117, 116);
-            btnIniciar.Margin = new Padding(4, 5, 4, 5);
-            btnIniciar.MouseState = MaterialSkin.MouseState.HOVER;
-            btnIniciar.Name = "btnIniciar";
-            btnIniciar.NoAccentTextColor = Color.Empty;
-            btnIniciar.Size = new Size(73, 36);
-            btnIniciar.TabIndex = 3;
-            btnIniciar.Text = "iniciar";
-            btnIniciar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnIniciar.UseAccentColor = false;
-            btnIniciar.UseVisualStyleBackColor = true;
-            btnIniciar.Click += btnIniciar_Click_1;
-            // 
             // btnParar
             // 
             btnParar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -138,7 +126,7 @@
             groupBox1.Controls.Add(sliderVolumen);
             groupBox1.Controls.Add(sliderFrecuencia);
             groupBox1.Controls.Add(btnIniciar);
-            groupBox1.Location = new Point(68, 86);
+            groupBox1.Location = new Point(19, 146);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
@@ -146,6 +134,26 @@
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "Parametros";
+            // 
+            // btnIniciar
+            // 
+            btnIniciar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnIniciar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnIniciar.Depth = 0;
+            btnIniciar.HighEmphasis = true;
+            btnIniciar.Icon = null;
+            btnIniciar.Location = new Point(117, 116);
+            btnIniciar.Margin = new Padding(4, 5, 4, 5);
+            btnIniciar.MouseState = MaterialSkin.MouseState.HOVER;
+            btnIniciar.Name = "btnIniciar";
+            btnIniciar.NoAccentTextColor = Color.Empty;
+            btnIniciar.Size = new Size(73, 36);
+            btnIniciar.TabIndex = 3;
+            btnIniciar.Text = "iniciar";
+            btnIniciar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnIniciar.UseAccentColor = false;
+            btnIniciar.UseVisualStyleBackColor = true;
+            btnIniciar.Click += btnIniciar_Click_1;
             // 
             // materialExpansionPanel1
             // 
@@ -163,7 +171,7 @@
             materialExpansionPanel1.ExpandHeight = 219;
             materialExpansionPanel1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialExpansionPanel1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialExpansionPanel1.Location = new Point(660, 94);
+            materialExpansionPanel1.Location = new Point(660, 70);
             materialExpansionPanel1.Margin = new Padding(16);
             materialExpansionPanel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialExpansionPanel1.Name = "materialExpansionPanel1";
@@ -263,11 +271,104 @@
             materialLabel1.Text = "* Para ondas sonoras en el aire a 20°C, v ≈ 343 m/s";
             materialLabel1.UseAccent = true;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(33, 81);
+            label1.Name = "label1";
+            label1.Size = new Size(412, 20);
+            label1.TabIndex = 9;
+            label1.Text = "Tono agudo: Son aquellos a más de 2000Hz hasta 4000Hz";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(33, 112);
+            label2.Name = "label2";
+            label2.Size = new Size(396, 20);
+            label2.TabIndex = 10;
+            label2.Text = "Tono grave: Son aquellos a menos de 500Hz hasta 20hz";
+            // 
+            // materialExpansionPanel2
+            // 
+            materialExpansionPanel2.BackColor = Color.FromArgb(255, 255, 255);
+            materialExpansionPanel2.CancelButtonText = "CERRAR";
+            materialExpansionPanel2.Controls.Add(txtrespuesta1);
+            materialExpansionPanel2.Controls.Add(label4);
+            materialExpansionPanel2.Controls.Add(label3);
+            materialExpansionPanel2.Controls.Add(btnRespuesta);
+            materialExpansionPanel2.Depth = 0;
+            materialExpansionPanel2.Description = "";
+            materialExpansionPanel2.ExpandHeight = 319;
+            materialExpansionPanel2.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialExpansionPanel2.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialExpansionPanel2.Location = new Point(660, 291);
+            materialExpansionPanel2.Margin = new Padding(16);
+            materialExpansionPanel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialExpansionPanel2.Name = "materialExpansionPanel2";
+            materialExpansionPanel2.Padding = new Padding(21, 51, 21, 13);
+            materialExpansionPanel2.Size = new Size(525, 319);
+            materialExpansionPanel2.TabIndex = 9;
+            materialExpansionPanel2.Title = "Actividad Interactiva";
+            materialExpansionPanel2.ValidationButtonText = "";
+            // 
+            // txtrespuesta1
+            // 
+            txtrespuesta1.Location = new Point(299, 118);
+            txtrespuesta1.Name = "txtrespuesta1";
+            txtrespuesta1.Size = new Size(176, 23);
+            txtrespuesta1.TabIndex = 5;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(14, 104);
+            label4.Name = "label4";
+            label4.RightToLeft = RightToLeft.No;
+            label4.Size = new Size(279, 51);
+            label4.TabIndex = 4;
+            label4.Text = "¿Cual es el tono que emite un rayo al caer \r\ncon una frecuencia de 400Hz\r\ncon una aplitud de 50?";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(14, 65);
+            label3.Name = "label3";
+            label3.Size = new Size(444, 17);
+            label3.TabIndex = 3;
+            label3.Text = "Determinar si el tono es agudo oh grave de las siguientes preguntas:";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnRespuesta
+            // 
+            btnRespuesta.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnRespuesta.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnRespuesta.Depth = 0;
+            btnRespuesta.HighEmphasis = true;
+            btnRespuesta.Icon = null;
+            btnRespuesta.Location = new Point(32, 264);
+            btnRespuesta.Margin = new Padding(4, 6, 4, 6);
+            btnRespuesta.MouseState = MaterialSkin.MouseState.HOVER;
+            btnRespuesta.Name = "btnRespuesta";
+            btnRespuesta.NoAccentTextColor = Color.Empty;
+            btnRespuesta.Size = new Size(170, 36);
+            btnRespuesta.TabIndex = 2;
+            btnRespuesta.Text = "Verificar Repuesta";
+            btnRespuesta.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnRespuesta.UseAccentColor = false;
+            btnRespuesta.UseVisualStyleBackColor = true;
+            btnRespuesta.Click += btnRespuesta_Click;
+            // 
             // ondas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1213, 622);
+            Controls.Add(materialExpansionPanel2);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(materialExpansionPanel1);
             Controls.Add(groupBox1);
             Controls.Add(pictureBox);
@@ -280,7 +381,10 @@
             groupBox1.PerformLayout();
             materialExpansionPanel1.ResumeLayout(false);
             materialExpansionPanel1.PerformLayout();
+            materialExpansionPanel2.ResumeLayout(false);
+            materialExpansionPanel2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -288,7 +392,6 @@
         private PictureBox pictureBox;
         private MaterialSkin.Controls.MaterialSlider sliderVolumen;
         private MaterialSkin.Controls.MaterialSlider sliderFrecuencia;
-        private MaterialSkin.Controls.MaterialButton btnIniciar;
         private MaterialSkin.Controls.MaterialButton btnParar;
         private GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialExpansionPanel materialExpansionPanel1;
@@ -299,5 +402,13 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private Label label1;
+        private Label label2;
+        private MaterialSkin.Controls.MaterialButton btnIniciar;
+        private MaterialSkin.Controls.MaterialExpansionPanel materialExpansionPanel2;
+        private MaterialSkin.Controls.MaterialButton btnRespuesta;
+        private Label label3;
+        private Label label4;
+        private TextBox txtrespuesta1;
     }
 }
