@@ -104,15 +104,14 @@ namespace Calculadoradevectore
                 pestañas.SelectTab("tabResultados");
 
                 panelCubrir.Visible = false;
+
+                actividadInteractiva actividad = new actividadInteractiva(Vectores, newVector);
+                actividad.Show();
             }
             else
             {
                 MessageBox.Show("Agregue los Vectores a sumar", "DATOS VACIOS", MessageBoxButtons.OK);
             }
-
-            actividadInteractiva actividad = new actividadInteractiva(Vectores, newVector);
-
-            actividad.Show();
         }
 
         public void listaVectoresAgregados(int magnitud, double angulo)

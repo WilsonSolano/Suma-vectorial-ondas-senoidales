@@ -49,7 +49,7 @@
             comporbar3 = new MaterialSkin.Controls.MaterialButton();
             comporbar4 = new MaterialSkin.Controls.MaterialButton();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            puntaje = new MaterialSkin.Controls.MaterialLabel();
             SuspendLayout();
             // 
             // pregunta1
@@ -58,7 +58,7 @@
             pregunta1.Depth = 0;
             pregunta1.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             pregunta1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            pregunta1.Location = new Point(59, 115);
+            pregunta1.Location = new Point(59, 98);
             pregunta1.MouseState = MaterialSkin.MouseState.HOVER;
             pregunta1.Name = "pregunta1";
             pregunta1.Size = new Size(91, 24);
@@ -72,7 +72,7 @@
             comporbar1.Depth = 0;
             comporbar1.HighEmphasis = true;
             comporbar1.Icon = null;
-            comporbar1.Location = new Point(319, 155);
+            comporbar1.Location = new Point(319, 143);
             comporbar1.Margin = new Padding(5, 8, 5, 8);
             comporbar1.MouseState = MaterialSkin.MouseState.HOVER;
             comporbar1.Name = "comporbar1";
@@ -91,7 +91,7 @@
             pregunta2.Depth = 0;
             pregunta2.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             pregunta2.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            pregunta2.Location = new Point(59, 209);
+            pregunta2.Location = new Point(59, 200);
             pregunta2.MouseState = MaterialSkin.MouseState.HOVER;
             pregunta2.Name = "pregunta2";
             pregunta2.Size = new Size(91, 24);
@@ -104,7 +104,7 @@
             pregunta3.Depth = 0;
             pregunta3.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             pregunta3.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            pregunta3.Location = new Point(59, 410);
+            pregunta3.Location = new Point(59, 405);
             pregunta3.MouseState = MaterialSkin.MouseState.HOVER;
             pregunta3.Name = "pregunta3";
             pregunta3.Size = new Size(91, 24);
@@ -117,7 +117,7 @@
             pregunta4.Depth = 0;
             pregunta4.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             pregunta4.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            pregunta4.Location = new Point(59, 309);
+            pregunta4.Location = new Point(59, 303);
             pregunta4.MouseState = MaterialSkin.MouseState.HOVER;
             pregunta4.Name = "pregunta4";
             pregunta4.Size = new Size(91, 24);
@@ -131,7 +131,7 @@
             respuesta1.Depth = 0;
             respuesta1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             respuesta1.LeadingIcon = null;
-            respuesta1.Location = new Point(70, 149);
+            respuesta1.Location = new Point(70, 137);
             respuesta1.MaxLength = 50;
             respuesta1.MouseState = MaterialSkin.MouseState.OUT;
             respuesta1.Multiline = false;
@@ -148,7 +148,7 @@
             respuesta2.Depth = 0;
             respuesta2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             respuesta2.LeadingIcon = null;
-            respuesta2.Location = new Point(70, 243);
+            respuesta2.Location = new Point(70, 239);
             respuesta2.MaxLength = 50;
             respuesta2.MouseState = MaterialSkin.MouseState.OUT;
             respuesta2.Multiline = false;
@@ -165,7 +165,7 @@
             respuesta3.Depth = 0;
             respuesta3.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             respuesta3.LeadingIcon = null;
-            respuesta3.Location = new Point(70, 343);
+            respuesta3.Location = new Point(70, 342);
             respuesta3.MaxLength = 50;
             respuesta3.MouseState = MaterialSkin.MouseState.OUT;
             respuesta3.Multiline = false;
@@ -196,7 +196,7 @@
             // 
             correcto1.AutoSize = true;
             correcto1.ForeColor = Color.DarkOliveGreen;
-            correcto1.Location = new Point(452, 164);
+            correcto1.Location = new Point(452, 152);
             correcto1.Name = "correcto1";
             correcto1.Size = new Size(63, 19);
             correcto1.TabIndex = 3;
@@ -207,7 +207,7 @@
             // 
             correcto2.AutoSize = true;
             correcto2.ForeColor = Color.DarkOliveGreen;
-            correcto2.Location = new Point(452, 256);
+            correcto2.Location = new Point(452, 252);
             correcto2.Name = "correcto2";
             correcto2.Size = new Size(63, 19);
             correcto2.TabIndex = 3;
@@ -218,7 +218,7 @@
             // 
             correcto3.AutoSize = true;
             correcto3.ForeColor = Color.DarkOliveGreen;
-            correcto3.Location = new Point(452, 358);
+            correcto3.Location = new Point(452, 357);
             correcto3.Name = "correcto3";
             correcto3.Size = new Size(63, 19);
             correcto3.TabIndex = 3;
@@ -240,7 +240,7 @@
             // 
             incorrecto1.AutoSize = true;
             incorrecto1.ForeColor = Color.DarkOliveGreen;
-            incorrecto1.Location = new Point(535, 164);
+            incorrecto1.Location = new Point(535, 152);
             incorrecto1.Name = "incorrecto1";
             incorrecto1.Size = new Size(72, 19);
             incorrecto1.TabIndex = 3;
@@ -251,7 +251,7 @@
             // 
             incorrecto2.AutoSize = true;
             incorrecto2.ForeColor = Color.DarkOliveGreen;
-            incorrecto2.Location = new Point(535, 256);
+            incorrecto2.Location = new Point(535, 252);
             incorrecto2.Name = "incorrecto2";
             incorrecto2.Size = new Size(72, 19);
             incorrecto2.TabIndex = 3;
@@ -262,7 +262,7 @@
             // 
             incorrecto3.AutoSize = true;
             incorrecto3.ForeColor = Color.DarkOliveGreen;
-            incorrecto3.Location = new Point(535, 358);
+            incorrecto3.Location = new Point(535, 357);
             incorrecto3.Name = "incorrecto3";
             incorrecto3.Size = new Size(72, 19);
             incorrecto3.TabIndex = 3;
@@ -287,7 +287,7 @@
             comporbar2.Depth = 0;
             comporbar2.HighEmphasis = true;
             comporbar2.Icon = null;
-            comporbar2.Location = new Point(319, 247);
+            comporbar2.Location = new Point(319, 243);
             comporbar2.Margin = new Padding(5, 8, 5, 8);
             comporbar2.MouseState = MaterialSkin.MouseState.HOVER;
             comporbar2.Name = "comporbar2";
@@ -307,7 +307,7 @@
             comporbar3.Depth = 0;
             comporbar3.HighEmphasis = true;
             comporbar3.Icon = null;
-            comporbar3.Location = new Point(319, 349);
+            comporbar3.Location = new Point(319, 348);
             comporbar3.Margin = new Padding(5, 8, 5, 8);
             comporbar3.MouseState = MaterialSkin.MouseState.HOVER;
             comporbar3.Name = "comporbar3";
@@ -352,26 +352,26 @@
             materialLabel1.TabIndex = 4;
             materialLabel1.Text = "PUNTAJE:";
             // 
-            // materialLabel2
+            // puntaje
             // 
-            materialLabel2.AutoSize = true;
-            materialLabel2.Depth = 0;
-            materialLabel2.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            materialLabel2.HighEmphasis = true;
-            materialLabel2.Location = new Point(777, 517);
-            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel2.Name = "materialLabel2";
-            materialLabel2.Size = new Size(36, 24);
-            materialLabel2.TabIndex = 5;
-            materialLabel2.Text = "N/D";
+            puntaje.AutoSize = true;
+            puntaje.Depth = 0;
+            puntaje.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            puntaje.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            puntaje.HighEmphasis = true;
+            puntaje.Location = new Point(777, 517);
+            puntaje.MouseState = MaterialSkin.MouseState.HOVER;
+            puntaje.Name = "puntaje";
+            puntaje.Size = new Size(36, 24);
+            puntaje.TabIndex = 5;
+            puntaje.Text = "N/D";
             // 
             // actividadInteractiva
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(909, 570);
-            Controls.Add(materialLabel2);
+            Controls.Add(puntaje);
             Controls.Add(materialLabel1);
             Controls.Add(incorrecto4);
             Controls.Add(correcto4);
@@ -424,6 +424,6 @@
         private MaterialSkin.Controls.MaterialButton comporbar3;
         private MaterialSkin.Controls.MaterialButton comporbar4;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel puntaje;
     }
 }

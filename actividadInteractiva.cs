@@ -21,6 +21,7 @@ namespace Calculadoradevectore
         private OrderedDictionary diccionarioPreguntas = new OrderedDictionary();
         private Label[] labels;
         private double margenDecimales = 0.2;
+        private int aciertos = 0;
 
         public actividadInteractiva(List<vectorClass> vectores, VectorResultanteClass newVector)
         {
@@ -41,13 +42,15 @@ namespace Calculadoradevectore
             respuesta2.KeyPress += new KeyPressEventHandler(Validar_KeyPress);
             respuesta3.KeyPress += new KeyPressEventHandler(Validar_KeyPress);
             respuesta4.KeyPress += new KeyPressEventHandler(Validar_KeyPress);
+
+            puntaje.Text = $"{aciertos}/4";
         }
 
         public void llenarDiccionarioPreguntas()
         {
             int indice = new Random().Next(0, listaVectores.Count);
-            diccionarioPreguntas.Add($"Para el vector {listaVectores[indice].SGmagnitud}, calcule la componente en X", listaVectores[indice].GComX);
-            diccionarioPreguntas.Add($"Para el vector {listaVectores[indice].SGmagnitud}, calcule la componente en Y", listaVectores[indice].GComY);
+            diccionarioPreguntas.Add($"Para el vector {listaVectores[indice].SGmagnitud} con angulo {listaVectores[indice].SGangulo}, calcule la componente en X", listaVectores[indice].GComX);
+            diccionarioPreguntas.Add($"Para el vector {listaVectores[indice].SGmagnitud} con angulo {listaVectores[indice].SGangulo}, calcule la componente en Y", listaVectores[indice].GComY * -1);
             diccionarioPreguntas.Add($"Para las sumatorias en X:{newVector.GSumComponenteX}, Y:{newVector.GSumComponenteY * -1}, calcule el angulo del vector resultante", newVector.GSdireccionRadianesTan);
             diccionarioPreguntas.Add($"Para las sumatorias en X:{newVector.GSumComponenteX}, Y:{newVector.GSumComponenteY * -1}, calcule el modulo del vector resultante", newVector.GModulo);
         }
@@ -74,6 +77,8 @@ namespace Calculadoradevectore
             {
                 correcto1.Visible = true;
                 incorrecto1.Visible = false;
+                aciertos++;
+                puntaje.Text = $"{aciertos}/4";
             }
             else
             {
@@ -84,7 +89,7 @@ namespace Calculadoradevectore
 
         private void Validar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != '-'))
             {
                 e.Handled = true;
             }
@@ -96,6 +101,8 @@ namespace Calculadoradevectore
             {
                 correcto2.Visible = true;
                 incorrecto2.Visible = false;
+                aciertos++;
+                puntaje.Text = $"{aciertos}/4";
             }
             else
             {
@@ -110,6 +117,8 @@ namespace Calculadoradevectore
             {
                 correcto3.Visible = true;
                 incorrecto3.Visible = false;
+                aciertos++;
+                puntaje.Text = $"{aciertos}/4";
             }
             else
             {
@@ -124,6 +133,8 @@ namespace Calculadoradevectore
             {
                 correcto4.Visible = true;
                 incorrecto4.Visible = false;
+                aciertos++;
+                puntaje.Text = $"{aciertos}/4";
             }
             else
             {
