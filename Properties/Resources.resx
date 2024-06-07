@@ -124,8 +124,11 @@
   <data name="ondas-de-radio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ondas-de-radio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo55Web_1700x3791" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo55Web_1700x3791.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ondas-de-radio (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ondas-de-radio (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="physics-wallpaper-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\physics-wallpaper-preview.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo-FEPADE-EL-SALVADOR-color-02-300x71" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo-FEPADE-EL-SALVADOR-color-02-300x71.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,10 +139,10 @@
   <data name="Logo55Web_1700x379" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo55Web_1700x379.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ondas-de-radio (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ondas-de-radio (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Logo55Web_1700x3791" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo55Web_1700x3791.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="physics-wallpaper-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\physics-wallpaper-preview.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WhatsApp Image 2024-06-06 at 7.45.29 PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WhatsApp Image 2024-06-06 at 7.45.29 PM.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -139,5 +139,15 @@ namespace Calculadoradevectore.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_06_06_at_7_45_29_PM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-06-06 at 7.45.29 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
