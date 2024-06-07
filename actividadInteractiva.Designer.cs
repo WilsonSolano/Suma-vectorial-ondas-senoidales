@@ -31,8 +31,8 @@
             pregunta1 = new MaterialSkin.Controls.MaterialLabel();
             comporbar1 = new MaterialSkin.Controls.MaterialButton();
             pregunta2 = new MaterialSkin.Controls.MaterialLabel();
-            pregunta3 = new MaterialSkin.Controls.MaterialLabel();
             pregunta4 = new MaterialSkin.Controls.MaterialLabel();
+            pregunta3 = new MaterialSkin.Controls.MaterialLabel();
             respuesta1 = new MaterialSkin.Controls.MaterialTextBox();
             respuesta2 = new MaterialSkin.Controls.MaterialTextBox();
             respuesta3 = new MaterialSkin.Controls.MaterialTextBox();
@@ -50,6 +50,7 @@
             comporbar4 = new MaterialSkin.Controls.MaterialButton();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             puntaje = new MaterialSkin.Controls.MaterialLabel();
+            cerrar = new MaterialSkin.Controls.MaterialButton();
             SuspendLayout();
             // 
             // pregunta1
@@ -98,31 +99,31 @@
             pregunta2.TabIndex = 0;
             pregunta2.Text = "preguntas";
             // 
-            // pregunta3
-            // 
-            pregunta3.AutoSize = true;
-            pregunta3.Depth = 0;
-            pregunta3.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
-            pregunta3.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            pregunta3.Location = new Point(59, 405);
-            pregunta3.MouseState = MaterialSkin.MouseState.HOVER;
-            pregunta3.Name = "pregunta3";
-            pregunta3.Size = new Size(91, 24);
-            pregunta3.TabIndex = 0;
-            pregunta3.Text = "preguntas";
-            // 
             // pregunta4
             // 
             pregunta4.AutoSize = true;
             pregunta4.Depth = 0;
             pregunta4.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             pregunta4.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            pregunta4.Location = new Point(59, 303);
+            pregunta4.Location = new Point(59, 405);
             pregunta4.MouseState = MaterialSkin.MouseState.HOVER;
             pregunta4.Name = "pregunta4";
             pregunta4.Size = new Size(91, 24);
             pregunta4.TabIndex = 0;
             pregunta4.Text = "preguntas";
+            // 
+            // pregunta3
+            // 
+            pregunta3.AutoSize = true;
+            pregunta3.Depth = 0;
+            pregunta3.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            pregunta3.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            pregunta3.Location = new Point(59, 303);
+            pregunta3.MouseState = MaterialSkin.MouseState.HOVER;
+            pregunta3.Name = "pregunta3";
+            pregunta3.Size = new Size(91, 24);
+            pregunta3.TabIndex = 0;
+            pregunta3.Text = "preguntas";
             // 
             // respuesta1
             // 
@@ -366,11 +367,32 @@
             puntaje.TabIndex = 5;
             puntaje.Text = "N/D";
             // 
+            // cerrar
+            // 
+            cerrar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            cerrar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            cerrar.Depth = 0;
+            cerrar.HighEmphasis = true;
+            cerrar.Icon = null;
+            cerrar.Location = new Point(452, 512);
+            cerrar.Margin = new Padding(4, 6, 4, 6);
+            cerrar.MouseState = MaterialSkin.MouseState.HOVER;
+            cerrar.Name = "cerrar";
+            cerrar.NoAccentTextColor = Color.Empty;
+            cerrar.Size = new Size(158, 36);
+            cerrar.TabIndex = 6;
+            cerrar.Text = "Cerrar Actividad";
+            cerrar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            cerrar.UseAccentColor = false;
+            cerrar.UseVisualStyleBackColor = true;
+            cerrar.Click += cerrar_Click;
+            // 
             // actividadInteractiva
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(909, 570);
+            Controls.Add(cerrar);
             Controls.Add(puntaje);
             Controls.Add(materialLabel1);
             Controls.Add(incorrecto4);
@@ -389,14 +411,14 @@
             Controls.Add(comporbar3);
             Controls.Add(comporbar2);
             Controls.Add(comporbar1);
-            Controls.Add(pregunta4);
             Controls.Add(pregunta3);
+            Controls.Add(pregunta4);
             Controls.Add(pregunta2);
             Controls.Add(pregunta1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "actividadInteractiva";
             Padding = new Padding(3, 81, 3, 4);
-            Text = "actividadInteractiva";
+            Text = "actividad Interactiva";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -406,8 +428,8 @@
         private MaterialSkin.Controls.MaterialLabel pregunta1;
         private MaterialSkin.Controls.MaterialButton comporbar1;
         private MaterialSkin.Controls.MaterialLabel pregunta2;
-        private MaterialSkin.Controls.MaterialLabel pregunta3;
         private MaterialSkin.Controls.MaterialLabel pregunta4;
+        private MaterialSkin.Controls.MaterialLabel pregunta3;
         private MaterialSkin.Controls.MaterialTextBox respuesta1;
         private MaterialSkin.Controls.MaterialTextBox respuesta2;
         private MaterialSkin.Controls.MaterialTextBox respuesta3;
@@ -425,5 +447,6 @@
         private MaterialSkin.Controls.MaterialButton comporbar4;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel puntaje;
+        private MaterialSkin.Controls.MaterialButton cerrar;
     }
 }

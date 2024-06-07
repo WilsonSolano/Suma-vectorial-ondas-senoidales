@@ -20,7 +20,7 @@ namespace Calculadoradevectore
         private VectorResultanteClass newVector;
         private OrderedDictionary diccionarioPreguntas = new OrderedDictionary();
         private Label[] labels;
-        private double margenDecimales = 0.2;
+        private double margenDecimales = 0.03;
         private int aciertos = 0;
 
         public actividadInteractiva(List<vectorClass> vectores, VectorResultanteClass newVector)
@@ -33,7 +33,7 @@ namespace Calculadoradevectore
             this.listaVectores = vectores;
             this.newVector = newVector;
 
-            labels = new Label[] { pregunta1, pregunta2, pregunta3, pregunta4 };
+            labels = new Label[] { pregunta1, pregunta2, pregunta4, pregunta3 };
 
             llenarDiccionarioPreguntas();
             imprimirPreguntas(labels);
@@ -73,23 +73,31 @@ namespace Calculadoradevectore
 
         private void comporbar1_Click(object sender, EventArgs e)
         {
-            if (respuestaCorrecta(Convert.ToDouble(respuesta1.Text), Convert.ToDouble(diccionarioPreguntas[pregunta1.Text]), margenDecimales))
+            if (!String.IsNullOrWhiteSpace(respuesta1.Text))
             {
-                correcto1.Visible = true;
-                incorrecto1.Visible = false;
-                aciertos++;
-                puntaje.Text = $"{aciertos}/4";
+                if (respuestaCorrecta(Convert.ToDouble(respuesta1.Text), Convert.ToDouble(diccionarioPreguntas[pregunta1.Text]), margenDecimales))
+                {
+                    correcto1.Visible = true;
+                    incorrecto1.Visible = false;
+                    aciertos++;
+                    puntaje.Text = $"{aciertos}/4";
+                }
+                else
+                {
+                    correcto1.Visible = false;
+                    incorrecto1.Visible = true;
+                }
             }
             else
             {
-                correcto1.Visible = false;
-                incorrecto1.Visible = true;
+                MessageBox.Show("Ingrese un dato");
             }
+            comporbar1.Visible = false;
         }
 
         private void Validar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != '-'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ',') && (e.KeyChar != '-') && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -97,50 +105,86 @@ namespace Calculadoradevectore
 
         private void comporbar2_Click(object sender, EventArgs e)
         {
-            if (respuestaCorrecta(Convert.ToDouble(respuesta2.Text), Convert.ToDouble(diccionarioPreguntas[pregunta2.Text]), margenDecimales))
+            if (!String.IsNullOrWhiteSpace(respuesta2.Text))
             {
-                correcto2.Visible = true;
-                incorrecto2.Visible = false;
-                aciertos++;
-                puntaje.Text = $"{aciertos}/4";
+                if (respuestaCorrecta(Convert.ToDouble(respuesta2.Text), Convert.ToDouble(diccionarioPreguntas[pregunta2.Text]), margenDecimales))
+                {
+                    correcto2.Visible = true;
+                    incorrecto2.Visible = false;
+                    aciertos++;
+                    puntaje.Text = $"{aciertos}/4";
+                }
+                else
+                {
+                    correcto2.Visible = false;
+                    incorrecto2.Visible = true;
+                }
             }
             else
             {
-                correcto2.Visible = false;
-                incorrecto2.Visible = true;
+                MessageBox.Show("Ingrese un dato");
             }
-
+            comporbar2.Visible = false;
         }
         private void comporbar3_Click(object sender, EventArgs e)
         {
-            if (respuestaCorrecta(Convert.ToDouble(respuesta3.Text), Convert.ToDouble(diccionarioPreguntas[pregunta3.Text]), margenDecimales))
+            if (!String.IsNullOrWhiteSpace(respuesta3.Text))
             {
-                correcto3.Visible = true;
-                incorrecto3.Visible = false;
-                aciertos++;
-                puntaje.Text = $"{aciertos}/4";
+                if (respuestaCorrecta(Convert.ToDouble(respuesta3.Text), Convert.ToDouble(diccionarioPreguntas[pregunta3.Text]), margenDecimales))
+                {
+                    correcto3.Visible = true;
+                    incorrecto3.Visible = false;
+                    aciertos++;
+                    puntaje.Text = $"{aciertos}/4";
+                }
+                else
+                {
+                    correcto3.Visible = false;
+                    incorrecto3.Visible = true;
+                }
             }
             else
             {
-                correcto3.Visible = false;
-                incorrecto3.Visible = true;
+                MessageBox.Show("Ingrese un dato");
             }
+            comporbar3.Visible = false;
         }
 
         private void comporbar4_Click(object sender, EventArgs e)
         {
-            if (respuestaCorrecta(Convert.ToDouble(respuesta4.Text), Convert.ToDouble(diccionarioPreguntas[pregunta4.Text]), margenDecimales))
+            if (!String.IsNullOrWhiteSpace(respuesta4.Text))
             {
-                correcto4.Visible = true;
-                incorrecto4.Visible = false;
-                aciertos++;
-                puntaje.Text = $"{aciertos}/4";
+                if (respuestaCorrecta(Convert.ToDouble(respuesta4.Text), Convert.ToDouble(diccionarioPreguntas[pregunta4.Text]), margenDecimales))
+                {
+                    correcto4.Visible = true;
+                    incorrecto4.Visible = false;
+                    aciertos++;
+                    puntaje.Text = $"{aciertos}/4";
+                }
+                else
+                {
+                    correcto4.Visible = false;
+                    incorrecto4.Visible = true;
+                }
             }
             else
             {
-                correcto4.Visible = false;
-                incorrecto4.Visible = true;
+                MessageBox.Show("Ingrese un dato");
             }
+            comporbar4.Visible = false;
+        }
+
+        private void cerrar_Click(object sender, EventArgs e)
+        {
+            if (aciertos == 4)
+            {
+                MessageBox.Show("Muy Bien, Puntaje Perfecto","¡Buen Trabajo!");
+            }
+            else
+            {
+                MessageBox.Show($"total de aciertos: {aciertos}", "Aciertos");
+            }
+            this.Close();
         }
     }
 }

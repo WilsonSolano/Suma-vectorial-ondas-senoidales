@@ -16,6 +16,7 @@ namespace Calculadoradevectore
         Bitmap mapavectores = new Bitmap(500, 500);
         Bitmap vectorResultanteMapa = new Bitmap(500, 500);
         VectorResultanteClass newVector = new VectorResultanteClass();
+        bool actividad = false;
 
 
         public Form1()
@@ -101,12 +102,16 @@ namespace Calculadoradevectore
                 newVector.imprimirModulo(moduloImpresion, moduloResul);
                 newVector.imprimirDireccion(labelImprimirDireccion, imprimirDireccionResul);
 
+
+                if (actividad)
+                {
+                    actividadInteractiva actividad = new actividadInteractiva(Vectores, newVector);
+                    actividad.ShowDialog();
+                }
+
                 pestañas.SelectTab("tabResultados");
 
                 panelCubrir.Visible = false;
-
-                actividadInteractiva actividad = new actividadInteractiva(Vectores, newVector);
-                actividad.Show();
             }
             else
             {
@@ -194,17 +199,20 @@ namespace Calculadoradevectore
             numVector = 0;
         }
 
-        public void actividad()
-        {
-            OrderedDictionary preguntas = new OrderedDictionary();
-
-            preguntas.Add("",1);
-        }
-
-
         private void materialTabSelector1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void materialSwitch1_CheckedChanged(object sender, EventArgs e)
+        {
+            actividad = !actividad;
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            actividadInteractiva actividad = new actividadInteractiva(Vectores, newVector);
+            actividad.Show();
         }
     }
 }
