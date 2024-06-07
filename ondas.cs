@@ -105,12 +105,16 @@ namespace Calculadoradevectore
         }
 
         private string respuesta1 = "agudo";
+        private string respuesta1cons= "agudos";
+        private string respuesta1cona = "aguda";
+        private string respuesta1conays = "agudas";
+
 
         private void btnRespuesta_Click(object sender, EventArgs e)
         {
             string respuestausuario1 = txtrespuesta1.Text.ToLower();
 
-            if (respuestausuario1==respuesta1)
+            if (respuestausuario1 == respuesta1 || respuestausuario1 == respuesta1cons||respuestausuario1==respuesta1cona||respuestausuario1==respuesta1conays)
             {
                 MessageBox.Show("¡Respuestas correctas toma una paleta!");
             }
