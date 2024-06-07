@@ -37,7 +37,7 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             pictureBox3 = new PictureBox();
-            linkLabel1 = new LinkLabel();
+            materialButton3 = new MaterialSkin.Controls.MaterialButton();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
@@ -173,24 +173,32 @@
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
             // 
-            // linkLabel1
+            // materialButton3
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.LinkColor = Color.Red;
-            linkLabel1.Location = new Point(422, 423);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(51, 15);
-            linkLabel1.TabIndex = 5;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Creditos";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            materialButton3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton3.Depth = 0;
+            materialButton3.HighEmphasis = true;
+            materialButton3.Icon = null;
+            materialButton3.Location = new Point(253, 423);
+            materialButton3.Margin = new Padding(4, 6, 4, 6);
+            materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton3.Name = "materialButton3";
+            materialButton3.NoAccentTextColor = Color.Empty;
+            materialButton3.Size = new Size(90, 36);
+            materialButton3.TabIndex = 6;
+            materialButton3.Text = "CREDITOS";
+            materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton3.UseAccentColor = false;
+            materialButton3.UseVisualStyleBackColor = true;
+            materialButton3.Click += materialButton3_Click;
             // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(861, 463);
-            Controls.Add(linkLabel1);
+            Controls.Add(materialButton3);
             Controls.Add(pictureBox3);
             Controls.Add(materialLabel2);
             Controls.Add(materialLabel1);
@@ -220,6 +228,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private PictureBox pictureBox3;
-        private LinkLabel linkLabel1;
+        private MaterialSkin.Controls.MaterialButton materialButton3;
     }
 }
